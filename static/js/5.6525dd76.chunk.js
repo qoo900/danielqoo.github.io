@@ -1,0 +1,2 @@
+(this.webpackJsonpfreepoli_Web=this.webpackJsonpfreepoli_Web||[]).push([[5],{76:function(s,t,e){"use strict";e.r(t),t.default=e.p+"static/media/things-to-know-about-startup-business.3df71b0b.md"}}]);
+//# sourceMappingURL=5.6525dd76.chunk.js.map
