@@ -1,0 +1,2 @@
+(this.webpackJsonpfreepoli_Web=this.webpackJsonpfreepoli_Web||[]).push([[3],{74:function(e,i,s){"use strict";s.r(i),i.default=s.p+"static/media/we_need_a_designer.66c050cd.md"}}]);
+//# sourceMappingURL=3.051adde9.chunk.js.map

@@ -1,34 +1,28 @@
 {
   "files": {
     "main.css": "/static/css/main.d2aad96a.chunk.css",
-    "main.js": "/static/js/main.03a52d40.chunk.js",
-    "main.js.map": "/static/js/main.03a52d40.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.0cbbcbf4.js",
-    "runtime-main.js.map": "/static/js/runtime-main.0cbbcbf4.js.map",
+    "main.js": "/static/js/main.cb51c9bc.chunk.js",
+    "main.js.map": "/static/js/main.cb51c9bc.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.da0a2f3f.js",
+    "runtime-main.js.map": "/static/js/runtime-main.da0a2f3f.js.map",
     "static/css/2.fee89144.chunk.css": "/static/css/2.fee89144.chunk.css",
-    "static/js/2.d4d0807c.chunk.js": "/static/js/2.d4d0807c.chunk.js",
-    "static/js/2.d4d0807c.chunk.js.map": "/static/js/2.d4d0807c.chunk.js.map",
-    "static/js/3.7fa19417.chunk.js": "/static/js/3.7fa19417.chunk.js",
-    "static/js/3.7fa19417.chunk.js.map": "/static/js/3.7fa19417.chunk.js.map",
-    "static/js/4.f45d5808.chunk.js": "/static/js/4.f45d5808.chunk.js",
-    "static/js/4.f45d5808.chunk.js.map": "/static/js/4.f45d5808.chunk.js.map",
-    "static/js/5.e8622206.chunk.js": "/static/js/5.e8622206.chunk.js",
-    "static/js/5.e8622206.chunk.js.map": "/static/js/5.e8622206.chunk.js.map",
+    "static/js/2.48a1caf3.chunk.js": "/static/js/2.48a1caf3.chunk.js",
+    "static/js/2.48a1caf3.chunk.js.map": "/static/js/2.48a1caf3.chunk.js.map",
+    "static/js/3.051adde9.chunk.js": "/static/js/3.051adde9.chunk.js",
+    "static/js/3.051adde9.chunk.js.map": "/static/js/3.051adde9.chunk.js.map",
     "index.html": "/index.html",
     "static/css/2.fee89144.chunk.css.map": "/static/css/2.fee89144.chunk.css.map",
     "static/css/main.d2aad96a.chunk.css.map": "/static/css/main.d2aad96a.chunk.css.map",
-    "static/js/2.d4d0807c.chunk.js.LICENSE.txt": "/static/js/2.d4d0807c.chunk.js.LICENSE.txt",
-    "static/media/best-app-development-tool.md": "/static/media/best-app-development-tool.6dbaf889.md",
-    "static/media/common-misconceptions-about-payment.md": "/static/media/common-misconceptions-about-payment.e5b2c5dc.md",
+    "static/js/2.48a1caf3.chunk.js.LICENSE.txt": "/static/js/2.48a1caf3.chunk.js.LICENSE.txt",
     "static/media/App.scss": "/static/media/map.0d7639e8.svg",
     "static/media/slick-theme.css": "/static/media/slick.c94f7671.ttf",
-    "static/media/things-to-know-about-startup-business.md": "/static/media/things-to-know-about-startup-business.3df71b0b.md"
+    "static/media/we_need_a_designer.md": "/static/media/we_need_a_designer.66c050cd.md"
   },
   "entrypoints": [
-    "static/js/runtime-main.0cbbcbf4.js",
+    "static/js/runtime-main.da0a2f3f.js",
     "static/css/2.fee89144.chunk.css",
-    "static/js/2.d4d0807c.chunk.js",
+    "static/js/2.48a1caf3.chunk.js",
     "static/css/main.d2aad96a.chunk.css",
-    "static/js/main.03a52d40.chunk.js"
+    "static/js/main.cb51c9bc.chunk.js"
   ]
 }
