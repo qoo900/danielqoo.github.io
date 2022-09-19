@@ -1,3 +1,3 @@
 # danielqoo.github.io
-blog_only
+blog_only     
 [link](https://freepoli.kr/)
