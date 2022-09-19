@@ -1,2 +1,3 @@
 # danielqoo.github.io
-[blog_only](https://freepoli.kr/)
+blog_only
+[link](https://freepoli.kr/)
