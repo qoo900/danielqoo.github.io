@@ -1,2 +1,2 @@
 # danielqoo.github.io
-collaboration_only
+[blog_only](https://freepoli.kr/)
