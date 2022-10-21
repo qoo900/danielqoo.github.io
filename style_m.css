@@ -1,0 +1,475 @@
+/* Fonts */
+@font-face {
+     font-family: 'DungGeunMo';
+     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/DungGeunMo.woff') format('woff');
+     font-weight: normal;
+     font-style: normal;
+}
+
+
+a{
+	color:black;
+}
+
+
+/* Overall */
+html, body { 
+    width:auto;
+    height:auto;
+    margin:0; 
+    overflow: hidden;
+    font-family: 'DungGeunMo', sans-serif;
+    background-color: #00ADAC;
+    font-size: 18px;
+
+}
+
+button{
+    font-family: 'DungGeunMo', sans-serif;
+}
+
+.btn{
+    font-family: 'DungGeunMo', sans-serif;
+}
+/* Windows */
+.window {
+    padding: 4px;
+    background-color: white;
+	top:0px;
+	left:0px;
+	width: calc(100% - 8px); 
+	height: calc(100% - 8px);
+	position:absolute;
+    
+	box-shadow:
+        inset 0 0 0 1px black,
+        inset 0 0 0 3px lightgrey,
+        inset 0 0 0 4px black;
+}
+
+.windowheader {
+    background-color: lightgrey;
+    color: black;
+    border-bottom: 1px solid black;
+    font-size: 20px;
+    height: 26px; 
+	line-height:24px;
+	
+}
+
+.selectedwindow .windowheader {
+    background-color: darkblue;
+    color: white;
+}
+
+.windowtitle {
+    padding: 2px;
+    text-align: center;
+    cursor: default;
+
+}
+
+.windowclose {
+	float:right;	
+	height:26px;
+	width:18px;
+	color:white;
+	cursor:pointer;
+	background:#c0c0c0;
+    text-shadow: 2px 2px black;
+			box-shadow: inset -1px -1px 1px 1px #84888c,inset 1px 1px 1px 1px #eaebed;
+	padding-left:6px;
+	
+
+}
+
+.windowStat{
+	float:right;	
+	height:26px;
+	width:24px;
+	color:white;
+	text-align:center;
+	cursor:pointer;
+	background:#c0c0c0;
+    text-shadow: 2px 2px black;
+	font-weight:bold;
+	font-size:20px;
+			box-shadow: inset -1px -1px 1px 1px #84888c,inset 1px 1px 1px 1px #eaebed;
+	
+}
+
+.windowStat::before{
+	/*content:"☰";*/
+	content:"?";
+	position:relative;
+	top:0px;
+	left:-1px;
+}
+
+.windowclose::before{
+	content:"X";
+}
+
+.windowmenubar {
+    background-color: #f2f2f2;
+    border-bottom: 1px solid black;
+    font-size: 18px;
+    height: 24px;
+    line-height: 24px;
+    cursor: default;
+}
+
+
+
+.ui-icon-gripsmall-diagonal-se {
+    background-image: none !important;
+}
+
+/* Window contents */
+.windowinner {
+    height: calc(100% - 27px);
+    width: 100%;
+	overflow-y:auto;
+	background-color: #f2f2f2;
+
+}
+
+.bgBase{
+	background:#c0c0c0;
+}
+
+.baseHead{
+	height:135px;
+}
+.windowmenubar + .windowinner {
+    height: calc(100% - 49px) !important;
+}
+
+.fullwindowhtml {
+    padding: 0px 8px;
+}
+
+textarea.fullwindowtextarea {
+    padding: 5px;
+    width: 100%;
+    height: 100%;
+    resize: none;
+    border: none;
+    outline: none;
+    font-family: 'DungGeunMo', sans-serif;
+    font-size: 12px;
+}
+
+textarea.fullwindowdosprompt {
+    padding: 5px;
+    width: 100%;
+    height: 100%;
+    resize: none;
+    border: none;
+    outline: none;
+    background-color: black;
+    color: lightgrey;
+    font-family: 'DOS', monospace;
+    font-size: 16px;
+}
+
+/* Icons */
+.icon {
+    display: inline-block;
+    margin: 10px;
+    text-align: center;
+}
+
+.icon p {
+    display: block;
+    margin: 5px auto 0 auto;
+	width:140px;
+    padding: 2px;
+    cursor: default;
+}
+
+.icon p.highlight {
+    background-color: darkblue;
+    color: white;
+}
+
+.textWindow{
+	padding:4px;
+	line-height:28px;
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		.iconImg{
+			width:60px;
+		}
+
+		.iconImgClone{
+			width:60px;
+		}
+		.certText{
+			position:absolute;
+			padding-left:10px;
+			padding-right:10px;
+			bottom:10px;
+			color:white;
+			font-size:14px;
+		}
+
+		.certIcon{
+			position:fixed;
+			bottom:30px;
+			right:30px;
+			width:200px;
+
+		}
+		.certIcon img{
+			margin-top:5px;
+		}
+		.artistImg{
+			width:100%;
+		}
+
+		.txtBold{
+			font-weight:600;
+		}
+
+		.txtUnderLine{
+			text-decoration:underline;
+		}
+
+		.height50{
+			width:100%;
+			height:50px;
+		}
+		.windowControl{
+			position:absolute;top:4;right:4;
+		}
+
+
+		.menuitem{
+			display:inline-block;
+			margin:0 10px 0 0px
+		}
+
+		.menuitem span{
+			text-decoration:underline;
+		}
+
+		.windowtitle .button {
+		  background: #c0c0c0;
+		  color: #000;
+		  display: inline-block;
+		  margin: 0px;
+		  width: 24px;
+		  height: 23px;
+		  font-size: 13px;
+		  float: right;
+		  border-left: solid 1px black;
+		  border-bottom: solid 1px black;
+
+		box-shadow: inset -1px -1px 1px 1px #84888c,inset 1px 1px 1px 1px #eaebed;
+		  line-height: 22px;
+		  z-index: 5555;
+		}
+
+		.windowtitle .button:active {
+		  border: inset 1px;
+		}		
+
+		.maximize {
+		  position:fixed;
+		  top: 0px !important;
+		  right: 0px !important;
+		  left: 0px !important;
+		  bottom: 0px !important;
+		  width: auto !important;
+		  height: auto !important;
+		}
+
+		.minimize {
+			height:24px !important;
+
+		}
+
+		::-webkit-scrollbar {
+		  width: 24px;
+		  background-color: #c0c0c0; /* 또는 트랙에 추가한다 */
+		  border:1px solid black;
+		}
+
+		::-webkit-scrollbar-thumb {
+
+			background:c0c4c8;
+			border: 1px solid black;
+			box-shadow: inset -1px -1px 1px 1px #84888c,inset 1px 1px 1px 1px #eaebed;
+		}
+
+		::-webkit-scrollbar-button:start {
+			background-size:contain;
+			background-image:url("./icons/scroll_up.png");
+			width:24px;
+			height:24px;
+			border:1px solid black
+		}
+		::-webkit-scrollbar-button:end {
+			background-size:contain;
+			background-image:url("./icons/scroll_down.png");
+			width:24px;
+			height:24px;
+		  border:1px solid black;
+
+		}
+
+		::-webkit-scrollbar-button:active{
+		  border: inset 2px black;
+		}
+
+
+		/*가로메뉴형*/
+		ul{
+			list-style:none;
+			padding:0px;
+			margin:0px;
+			width:100%;
+			margin:0 auto;
+		}
+		#menu {
+
+			 height: 100%;
+
+		}
+
+		.main1 {
+
+			 width: 100%;
+			 height: 100%;
+				
+		}
+		.main1>li {
+
+			 float: left;
+			 height:24px;
+			
+			 line-height: 26px;
+			 position: relative;
+
+		}
+		.main1>li a span{
+			text-decoration:underline;
+		}
+		.main1>li:hover .main2 {
+			 left: 0;
+			 top: 24px;
+			 z-index:9999;
+		}
+		.main1>li a {
+			 display: block;
+			 text-decoration: none;
+			 color:black;
+			 padding-right:10px;
+			 padding-left:10px;
+			 height:100%;
+
+		}
+		.main1>li a:hover {
+			 background: #c0c0c0;
+			 z-index:9999;
+		}
+		.main2 {
+			z-index:9999;	
+			 position: absolute;
+			 width: 80%;
+			 left: -9999px;
+			 background: #f2f2f2;
+			 width: 200px;
+			 margin:0px;
+		}
+		.main2>li:first-child{
+				border-top:1px solid black;			
+		}
+
+		.main2>li:last-child{
+				border-bottom:1px solid black;			
+		}
+		.main2>li {
+			 position: relative;
+
+
+			border-right:1px solid black;
+			border-left:1px solid black;
+
+		}
+		.main2>li:hover .main3 {
+			 left: 100%;
+		}
+		.main2>li a, .main3>li a {
+			padding-top:1px;
+			padding-bottom:1px;
+		}
+		.main3 {
+			 position: absolute;
+			 top: -1px;
+			 background: #f2f2f2;
+			 width: 150px;
+			 left: -9999px;
+			
+
+			/*left: 100%;
+			*/
+			/*display: none;
+			*/
+		}
+
+		.main3>li:first-child{
+				border-top:1px solid black;			
+		}
+		.main3>li:last-child{
+			border-bottom:1px solid black;
+		}
+		.main3 li{
+			border-right:1px solid black;
+			border-left:1px solid black;
+		}
+		.main3>li a:hover {
+			 background: #c0c0c0;
+			 z-index:9999;
+		}
+
+		/* 타임테이블용 */
+		.tg  {border-collapse:collapse;border-spacing:0;border:0px;font-size:18px;width:auto;margin-left:10px;}
+		.tg .tg_white{	height:10px;}
+
+		.txtWhite{
+			color:white;
+
+		}
+
+		
+		.mobile_li{
+			width:30%;
+			display:inline-block;
+			text-align:center;
+			padding:0;
+			margin:0;
+
+
+		}
+
+		.txtNoUnder{
+			text-decoration:none;
+		}

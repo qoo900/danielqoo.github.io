@@ -1,0 +1,427 @@
+/* Fonts */
+@font-face {
+     font-family: 'DungGeunMo';
+     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/DungGeunMo.woff') format('woff');
+     font-weight: normal;
+     font-style: normal;
+}
+
+
+
+
+
+/* Overall */
+html, body { 
+    width:auto;
+    height:auto;
+    margin:0; 
+    overflow: hidden;
+    font-family: 'DungGeunMo', sans-serif;
+    background-color: #00ADAC;
+    font-size: 20px;
+
+}
+
+button{
+    font-family: 'DungGeunMo', sans-serif;
+}
+
+.btn{
+    font-family: 'DungGeunMo', sans-serif;
+}
+/* Windows */
+.window {
+    padding: 4px;
+    background-color: white;
+    
+	box-shadow:
+        inset 0 0 0 1px black,
+        inset 0 0 0 3px lightgrey,
+        inset 0 0 0 4px black;
+}
+
+.windowheader {
+    background-color: lightgrey;
+    color: black;
+    border-bottom: 1px solid black;
+    font-size: 18px;
+    height: 23px; 
+	line-height:22px;
+	
+}
+
+.selectedwindow .windowheader {
+    background-color: darkblue;
+    color: white;
+}
+
+.windowtitle {
+    padding: 2px;
+    text-align: center;
+    cursor: default;
+
+}
+
+.windowclose {
+    float: left;
+    display: inline-block;
+    width: 18px;
+    height: 22px;
+    padding: 0 0 1px 5px;
+    background-color: #c0c0c0;
+    border-right: 1px solid black;
+	border-bottom: 1px solid black;
+    font-size: 24px;
+	line-height:20px;
+    color: white;
+    font-weight: bold;
+    -webkit-text-stroke-width: 0.5px;
+    -webkit-text-stroke-color: black;
+    text-shadow: 1px 1px darkgrey;
+    cursor: pointer;
+}
+
+.windowmenubar {
+    background-color: #f2f2f2;
+    border-bottom: 1px solid black;
+    font-size: 18px;
+    height: 24px;
+    line-height: 24px;
+    cursor: default;
+}
+
+.windowclose::before {
+    content: '-';
+}
+
+.ui-icon-gripsmall-diagonal-se {
+    background-image: none !important;
+}
+
+/* Window contents */
+.windowinner {
+    height: calc(100% - 24px);
+    width: 100%;
+	overflow-y:auto
+
+}
+
+.bgBase{
+	background:#c0c0c0;
+}
+.windowmenubar + .windowinner {
+    height: calc(100% - 49px) !important;
+}
+
+.fullwindowhtml {
+    padding: 0px 8px;
+}
+
+textarea.fullwindowtextarea {
+    padding: 5px;
+    width: 100%;
+    height: 100%;
+    resize: none;
+    border: none;
+    outline: none;
+    font-family: 'DungGeunMo', sans-serif;
+    font-size: 12px;
+}
+
+textarea.fullwindowdosprompt {
+    padding: 5px;
+    width: 100%;
+    height: 100%;
+    resize: none;
+    border: none;
+    outline: none;
+    background-color: black;
+    color: lightgrey;
+    font-family: 'DOS', monospace;
+    font-size: 16px;
+}
+
+/* Icons */
+.icon {
+    display: inline-block;
+    margin: 10px;
+    text-align: center;
+}
+
+.icon p {
+    display: block;
+    margin: 5px auto 0 auto;
+	width:140px;
+    padding: 2px;
+    cursor: default;
+}
+
+.icon p.highlight {
+    background-color: darkblue;
+    color: white;
+}
+
+.textWindow{
+	padding:10px;
+	line-height:28px;
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.iconImg{
+	width:60px;
+}
+
+.iconImgClone{
+	width:60px;
+}
+.certText{
+	position:fixed;
+	bottom:30px;
+	left:30px;
+}
+
+.certIcon{
+	position:fixed;
+	bottom:20px;
+	right:20px;
+	width:600px;
+	text-align:right;
+}
+.certIcon img{
+	margin-left:20px;
+}
+.artistImg{
+	width:100%;
+}
+
+.txtBold{
+	font-weight:600;
+}
+
+.txtUnderLine{
+	text-decoration:underline;
+}
+
+.height50{
+	width:100%;
+	height:50px;
+}
+.windowControl{
+	position:absolute;top:4;right:4;
+}
+
+
+.menuitem{
+	display:inline-block;
+	margin:0 10px 0 0px
+}
+
+.menuitem span{
+	text-decoration:underline;
+}
+
+.windowtitle .button {
+	background: #c0c0c0;
+	color: #000;
+	display: inline-block;
+	margin: 0px;
+	width: 23px;
+	height: 23px;
+	font-size: 14px;
+	float: right;
+	border-left: solid 1px black;
+	border-bottom: solid 1px black;
+
+box-shadow: inset -1px -1px 1px 1px #84888c,inset 1px 1px 1px 1px #eaebed;
+	line-height: 22px;
+	z-index: 5555;
+}
+
+.windowtitle .button:active {
+	border: inset 1px;
+}		
+
+.maximize {
+	position:fixed;
+	top: 0px !important;
+	right: 0px !important;
+	left: 0px !important;
+	bottom: 0px !important;
+	width: auto !important;
+	height: auto !important;
+}
+
+.minimize {
+	
+
+}
+
+::-webkit-scrollbar {
+	width: 24px;
+	background-color: #c0c0c0; /* ë˜ëŠ” íŠ¸ëž™ì— ì¶”ê°€í•œë‹¤ */
+	border:1px solid black;
+}
+
+::-webkit-scrollbar-thumb {
+
+	background:c0c4c8;
+	border: 1px solid black;
+	box-shadow: inset -1px -1px 1px 1px #84888c,inset 1px 1px 1px 1px #eaebed;
+}
+
+::-webkit-scrollbar-button:start {
+	background-size:contain;
+	background-image:url("./icons/scroll_up.png");
+	width:24px;
+	height:23px;
+	border-bottom:1px solid black;
+	border-left:1px solid black;
+	border-right:1px solid black;
+}
+::-webkit-scrollbar-button:end {
+	background-size:contain;
+	background-image:url("./icons/scroll_down.png");
+	width:24px;
+	height:24px;
+	border:1px solid black;
+
+}
+
+::-webkit-scrollbar-button:active{
+	border: inset 2px black;
+}
+
+
+
+
+
+
+ul{
+	list-style:none;
+	padding:0px;
+	margin:0px;
+}
+#menu {
+
+		height: 100%;
+
+}
+
+.main1 {
+
+		width: 100%;
+		height: 100%;
+		
+}
+.main1>li {
+
+		float: left;
+		height:24px;
+	
+		line-height: 26px;
+		position: relative;
+
+}
+.main1>li a span{
+	text-decoration:underline;
+}
+.main1>li:hover .main2 {
+		left: 0;
+		top: 24px;
+		z-index:9999;
+}
+.main1>li a {
+		display: block;
+		text-decoration: none;
+		color:black;
+		padding-right:10px;
+		padding-left:10px;
+		height:100%;
+
+}
+.main1>li a:hover {
+		background: #c0c0c0;
+		z-index:9999;
+}
+.main2 {
+	z-index:9999;	
+		position: absolute;
+		width: 80%;
+		left: -9999px;
+		background: #f2f2f2;
+		width: 200px;
+		margin:0px;
+}
+.main2>li:first-child{
+		border-top:1px solid black;			
+}
+
+.main2>li:last-child{
+		border-bottom:1px solid black;			
+}
+.main2>li {
+		position: relative;
+
+
+	border-right:1px solid black;
+	border-left:1px solid black;
+
+}
+.main2>li:hover .main3 {
+		left: 100%;
+}
+.main2>li a, .main3>li a {
+	padding-top:1px;
+	padding-bottom:1px;
+}
+.main3 {
+		position: absolute;
+		top: -1px;
+		background: #f2f2f2;
+		width: 150px;
+		left: -9999px;
+	
+
+	/*left: 100%;
+	*/
+	/*display: none;
+	*/
+}
+
+.main3>li:first-child{
+		border-top:1px solid black;			
+}
+.main3>li:last-child{
+	border-bottom:1px solid black;
+}
+.main3 li{
+	border-right:1px solid black;
+	border-left:1px solid black;
+}
+.main3>li a:hover {
+		background: #c0c0c0;
+		z-index:9999;
+}
+
+
+.tg  {border-collapse:collapse;border-spacing:0;border:0px;font-size:20px;width:100%;}
+.tg td:first-child{width:40%;}
+.tg td{ padding:5px;}
+.tg .tg_white{	height:30px;}
+
+
