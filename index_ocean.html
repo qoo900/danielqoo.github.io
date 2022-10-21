@@ -606,25 +606,7 @@
                 });
 
 
-                // // create an AudioListener and add it to the camera
-                // const listener = new THREE.AudioListener();
-                // camera.add( listener );
 
-                // // create the PositionalAudio object (passing in the listener)
-                // const sound = new THREE.Audio( listener );
-
-                // // load a sound and set it as the PositionalAudio object's buffer
-                // const audioLoader = new THREE.AudioLoader();
-                // audioLoader.load( './hard01/creepy-ambient.mp3', function( buffer ) {
-                //     sound.setBuffer( buffer );
-                //     sound.setLoop( true );
-                //     sound.setVolume( 2.0 );
-                //     sound.setRefDistance( 20 );
-                //     sound.play();
-                // });
-
-                // finally add the sound to the mesh
-                //mesh.add( model );
 
 
             	//stats = new Stats();
@@ -740,6 +722,8 @@
             	window.addEventListener( 'resize', onWindowResize );
 
             	clock = new THREE.Clock();
+
+                gui.close();
 
             }
 
