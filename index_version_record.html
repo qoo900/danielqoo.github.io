@@ -4,7 +4,10 @@
 		<title>QOO's Desktop</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/>
-		<link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon">
+		<link rel="apple-touch-icon" sizes="180x180" href="/img/apple-touch-icon.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="/img/favicon-16x16.png">
+		<link rel="manifest" href="/img/site.webmanifest">
 		<link rel="stylesheet" href="style.css" type="text/css">
 
 		<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css" type="text/css">
@@ -39,10 +42,59 @@
 		<script src='./lib/shaders/CopyShader.js'></script>
 		<script src='./lib/shaders/FilmShader.js'></script>
 		<script src='./lib/shaders/RGBShiftShader.js'></script>
-		<script src='./js/BadTVShader.js'></script>
-		<script src='./js/StaticShader.js'></script>
 
-		
+		<!--Neon-->
+
+		<script>
+            var array001 = ["white", "red"];
+			var array002 = ["white", "yellow"];
+            var cnt = 0; window.onload = function () { neonSign001(); neonSign002(); }
+            function neonSign001() {
+                if (cnt == 3) cnt = 0;
+                neonStyle001.style.color = array001[cnt++];
+                setTimeout("neonSign001()", 500);
+            }
+			function neonSign002() {
+                if (cnt == 3) cnt = 0;
+                neonStyle002.style.color = array002[cnt++];
+                setTimeout("neonSign002()", 500);
+			}
+        </script>
+
+<!--inclundeHTML-->
+
+
+	<script>
+		function includeHTML() {
+		var z, i, elmnt, file, xhttp;
+		/*loop through a collection of all HTML elements:*/
+		z = document.getElementsByTagName("*");
+		for (i = 0; i < z.length; i++) {
+			elmnt = z[i];
+			/*search for elements with a certain attribute:*/
+			file = elmnt.getAttribute("tetris-include-html");
+			if (file) {
+			/*make an HTTP request using the attribute value as the file name:*/
+			xhttp = new XMLHttpRequest();
+			xhttp.onreadystatechange = function() {
+				if (this.readyState == 4) {
+				if (this.status == 200) {elmnt.innerHTML = this.responseText;}
+				if (this.status == 404) {elmnt.innerHTML = "Page not found.";}
+				/*remove the attribute, and call this function once more:*/
+				elmnt.removeAttribute("tetris-include-html");
+				includeHTML();
+				}
+			}      
+			xhttp.open("GET", file, true);
+			xhttp.send();
+			/*exit the function:*/
+			return;
+			}
+		}
+		};
+	</script>
+
+
 	</head>
 
 
@@ -53,27 +105,26 @@
 		<div id="intro" class="window selectedwindow" style="position: absolute; top: 50%; left: 50%; width: 1000px; height: 700px; z-index: 101; margin-left:-500px;margin-top:-335px;display:block">
 			<div class="windowheader">
 				<div class="windowclose introclose"></div>
-				<div class="windowtitle" onclick="screenSaver()">Welcome :)</div>
+				<div class="windowtitle" onclick="screenSaver()"><font id="neonStyle001">OPEN</font> / <font id="neonStyle002">24 HRS</font></div>
 			</div>
 			<div class="windowinner" style="background:#f5f5f5;">
 				<div class="fullwindowhtml">
 					<div style="text-align:center;padding: top 0.5em;">
 						
 					<!-- 3Dface -->
-					<canvas id="threeDface" width="500rem" height="300rem"></canvas>
+					<canvas id="threeDface" width="480em" height="230em"></canvas>
 
 					<br><br><br>
-					<div style="width:580px;margin:0 auto;text-align:left;font-size:24px;">
+					<div style="width:550px;margin:0 auto;text-align:left;font-size:24px;">
 						QOO's Desktop // 20. 1. 13. - Today
 						<br>
 						(현재 시간 : <span id="today"></span>)
 						<br>
 						(작동 시간 : <span id="countdown"></span>)
 						<br><br>
-						QOO의 데스크톱에 방문 하신 걸 환영합니다.
-						<br><br>
 						</div>
 						<button class="introclose" style="background:#c0bfbf;border:1px solid black;width:120px;text-align:Center;font-family: 'DungGeunMo';height:28px;font-size:24px;">Enter</button>
+						<br><br>
 					</div>
 				</div>
 			</div>
@@ -91,12 +142,6 @@
 				<div class="windowtitle">QOO's Desktop</div>
 		  	</div>
 		  	<div class="windowmenubar">
-				<!--
-				<div class="menuitem"><span>H</span>ome</div>
-				<div class="menuitem"><span>T</span>imetable</div>
-				<div class="menuitem"><span>Z</span>oom</div>
-				<div class="menuitem"><span>A</span>bout</div>
-				-->
 
 				<ul class="main1 main">
 					<li>
@@ -107,16 +152,19 @@
 						<ul class="main2">
 							<li><a href="#">Web Dev</a>
 								<ul class="main3">
-									<li><a href="javascript:newWindow('#win_SRT');">SRT</a></li>
-									<li><a href="javascript:newWindow('#win_Freepoli');">Freepoli</a></li>
-									<!--<li><a href="javascript:newWindow('#win_Asaran_Jeong');">정아사란</a></li>-->
+									<li><a href="javascript:newWindow('#win_SRT');">Web SRT</a></li>
+									<li><a href="javascript:newWindow('#win_Freepoli');">Web Freepoli</a></li>
+								</ul>
+							</li>
+							<li><a href="#">App Dev</a>
+								<ul class="main3">
+									<li><a href="javascript:newWindow('#win_Poetry');">App Poetry</a></li>
 								</ul>
 							</li>
 							<li><a href="#">Generative Visuals</a>
 								<ul class="main3">
 									<li><a href="javascript:newWindow('#win_Ocean');">Ocean Panorama</a></li>
 									<li><a href="javascript:newWindow('#win_MTV');">Watch TV Shows</a></li>
-									<!--<li><a href="javascript:newWindow('#win_Ahyoung_Kim');">김아영</a></li>-->
 								</ul>
 							</li>
 							<li><a href="#">CV</a>
@@ -142,7 +190,34 @@
 
 		  	<div class="windowinner bgBase" style="height:1000px; scrollbar:yes; overflow-y: visible;">			
 				<div class="fullwindowicons">
-				  	
+
+					<br>
+					
+					<!--Tetris-->
+					<div class="grid">
+						<canvas id="board" class="game-board"></canvas>
+						<div class="right-column">
+						  	<div>
+								<h1>TETRIS</h1>
+								<h2>HIGH SCORES</h2>
+								<ol id="highScores"></ol>
+								<p>Score: <span id="score">0</span></p>
+								<p>Lines: <span id="lines">0</span></p>
+								<p>Level: <span id="level">0</span></p>
+								<canvas id="next" class="next"></canvas>
+							</div>
+							<div id="sound-div">
+								<span class="sound-item" id="sound-speaker"></span>
+								<span class="sound-item" id="sound-description"></span>
+							</div>
+							<button id="play-btn" onclick="play()" class="play-button">Play</button>
+							<button id="pause-btn" onclick="pause()" class="play-button">Pause</button>
+						</div>
+						<br>
+						<div style="grid-column: span 2;">P : Pause / Q : Rotation / ESC : GameOver / SPACE : QuickDown / ArrowKeys : LEFT, UP, RIGHT, DOWN</div>
+					</div>
+
+
 					<div class="icon" ondblclick="newWindow('#win_Me')">
 						<img src="./hard01/Qoo/icon_me.png" class="iconImg">
 						<p>QOO</p>
@@ -166,13 +241,13 @@
 					<br>
 
 					<div class="icon" ondblclick="newWindow('#win_Ocean')">
-						<img src="./hard01/ocean/sunset-ocean.png" class="iconImg">
+						<img src="./hard01/Ocean/sunset-ocean.png" class="iconImg">
 						<p>Ocean Panorama</p>
 					</div>
 
-					<div class="icon" ondblclick="newWindow('#win_Ocean')">
-						<img src="./hard01/ocean/sunset-ocean.png" class="iconImg">
-						<p>Ocean Panorama</p>
+					<div class="icon" ondblclick="newWindow('#win_Poetry')">
+						<img src="./hard01/Poetry/logo_app_poetry.png" class="iconImg">
+						<p>App Poetry</p>
 					</div>
 
 					<div class="icon" ondblclick="newWindow('#win_System')">
@@ -193,9 +268,13 @@
 						<p>Watch TV Shows</p>
 					</div>
 
-
+					<div class="icon" ondblclick="newWindow('#win_NoFile')">
+						<img src="./hard01/NoFile/no_file.png" class="iconImg">
+						<p>Profile</p>
+					</div>
 
 				</div>
+
 				<div class="certText">
 					<div style="width:100%; float: right;">Copyleft <span id="tyear"></span>. QOO All results can be coppied without permission.</div>
 				</div>
@@ -205,12 +284,12 @@
 			</div>
 		</div>
 
-		<!-- 개인 창 -->
 
 
+		<!-- 개별 창 -->
 
 		
-		<div id="win_Me" class="window" style="position: absolute; top: 52px; right: 2px; width: 500px; height: 380px; z-index: 3;">
+		<div id="win_Me" class="window" style="position: absolute; top: 52px; right: 2px; width: 900px; height: 380px; z-index: 3; display:none;">
 			<div class="windowheader">
 				<div class="windowclose"></div>
 				<div class="windowtitle">
@@ -228,20 +307,17 @@
 						<td class="tg-cly1">구본협 <br> Bonhyub Gu </td>
 					</tr>
 					<tr>
+						<td class="tg-cly1 tg_white"></td>
+						<td class="tg-cly1 tg_white"></td>
+					</tr>
+					<tr>
 						<td class="tg-cly1" colspan="2">About</td>
 					</tr>
 					<tr>
-						<td class="tg-cly1" colspan="2">웹을 기반으로 문학과 주변적 이미지를 엮거나, 데이터를 분석하여 현실의 이면을 드러내는 실험을 하고 있다. 불가능한 것을 일시적으로나마-가상으로-가능하게 하고, 불편한 진실을 조명한다. 사용자와 공간 웹의 상호작용을 통해 몰입의 경험을 제공하기도 한다.
-						<br><br>
-						가상 공간에서의 낯선 방식의 읽기, 쓰기, 듣기 경험을 통해 다양한 존재의 중심을 무너뜨리고, 주변에 있는 것, 비가시적인 것, 뒤틀린 것, 불편한 것, 또는 믿어 의심치 않았던 것들에 다시 한번 의문을 제기한다.
-						<br><br>
-						“너무나 많은 다른 세계가 존재하기 때문에, 사실, 한 세계가 존재할 수도 있는 모든 방식은 다른 어떤 세계가 실제로 <span class="txtUnderLine">존재하는</span> 모습이기도 하다.”
-						<br>
-						“There are so many other worlds, in fact, that absolutely every way that a world could possibly be is a way that some world <i>is.</i>”
-						<br><br>
-						—데이비드 루이스, 『세계의 다수성에 대하여』 
-						<br>
-						David Lewis, On the Plurality of Worlds, Oxford: Blackwell, 1986, p. 2.
+						<td class="tg-cly1" colspan="2">
+							안녕하세요, 구본협입니다.
+							<br><br>
+							반가워요.
 						</td>
 					</tr>
 					<tr>
@@ -252,7 +328,7 @@
 						<td class="tg-cly1" colspan="2">Skills & Abilities</td>
 					</tr>
 					<tr>
-						<td class="tg-cly1">1. 웹 개발(JS, Python, React, jQuery, Three.js, NginX, Django, SQL, AWS)</td>
+						<td class="tg-cly1">1. 웹 개발(JS, Python, React, TypeScript, Flutter, jQuery, Three.js, NginX, Django, SQL, AWS 등)</td>
 						<td class="tg-cly1">2. 데이터 분석(Pandas, Numpy, Tensorflow, Excel, Web Scraping)<br><br>3. 경영지원(사업기획, 회계, 인사, 총무)</td>
 					</tr>
 					<tr>
@@ -272,29 +348,34 @@
 		</div>
 
 
-		<div id="win_Team" class="window" style="position: absolute; top: 439px; right: 2px; width: 500px; height: 380px; z-index: 3;">
+		<div id="win_Team" class="window" style="position: absolute; top: 439px; right: 2px; width: 900px; height: 380px; z-index: 3; display:none;">
 			<div class="windowheader">
 				<div class="windowclose"></div>
 				<div class="windowtitle">
 					About My Club
 					<div class="windowControl">
-						<div class="button max" >&#11109;</div>
+						<div class="button max" >&#11109;</div> 
 					</div>
 				</div>
 			</div>
 			<div class="windowinner" style="overflow-y:auto;">		  	
 				<div class="textWindow">
-					Freepoli(사이드 프로젝트 그룹)는 다양한 형태의 갈등과 경계를 넘어서 새로운 놀이와 불편한 진실을 찾기 위해 몸소 발광(發狂)하는 개인들의 집합이다. 미술가에게 작업실이 창작의 공간이듯 우리에게 PC는 작업 공간이자 실험실이다.
+					Freepoli(프로젝트 그룹)는 다양한 형태의 갈등과 경계를 넘어서 새로운 놀이와 불편한 진실을 찾기 위해 몸소 발광(發光)하는 개인들의 집합이다. 미술가에게 작업실이 창작의 공간이듯 우리에게 PC는 작업 공간이자 실험실이다.
 					<br><br>
-					디지털 기술을 사용하는 작가(作家)들이 모인 Freepoli는 인간에 대한 공감적 이해와 문화적 감수성을 바탕으로 문학과 현실의 이면을 주제로 한 놀이 활동을 이어가고 있다.
+					디지털 기술을 사용하는 작가들이 모인 Freepoli는 인간에 대한 공감적 이해와 문화적 감수성을 바탕으로 문학과 현실의 이면을 주제로 한 놀이 활동을 이어가고 있다.
+					<br><br>
+					<td class="tg-cly1" colspan="2">구본협은 웹을 기반으로 주변적 이미지를 엮거나, 데이터를 분석하여 현실의 이면을 드러내는 실험을 하고 있다. 불가능한 것을 일시적으로나마-가상으로-가능하게 하고, 불편한 진실을 조명한다. 사용자와 공간 웹의 상호작용을 통해 몰입의 경험을 제공하기도 한다.
+					<br><br>
+					가상 공간에서의 낯선 방식의 읽기, 쓰기, 듣기 경험을 통해 다양한 존재의 중심을 무너뜨리고, 주변에 있는 것, 비가시적인 것, 뒤틀린 것, 불편한 것, 또는 믿어 의심치 않았던 것들에 다시 한번 의문을 제기한다.
 					<br><br>
 					<a href="mailto:tablern99@gmail.com">Contact: tablern99@gmail.com</a>
+					<br>
 				</div>
 			</div>
 		</div>
 
 
-		<div id="win_Credit" class="window" style="position: absolute; top: 53px; right: 460px; width: 520px; height: 420px; z-index: 10; display:none;">
+		<div id="win_Credit" class="window" style="position: absolute; top: 53px; right: 460px; width: 700px; height: 420px; z-index: 10; display:none;">
 			<div class="windowheader">
 				<div class="windowclose"></div>
 				<div class="windowtitle">
@@ -332,7 +413,7 @@
 		</div>
 
 
-		<div id="win_System" class="window" style="position: absolute; top: 250px; left: 100px; width: 500px; height: 700px; z-index: 10; display: none">
+		<div id="win_System" class="window" style="position: absolute; top: 81px; left: 528px; width: 711px; height: 767px; z-index: 10; display: none">
 			<div class="windowheader">
 				<div class="windowclose"></div>
 				<div class="windowtitle">Web System Dev
@@ -361,7 +442,7 @@
 		</div>
 
 
-		<div id="win_Management" class="window" style="position: absolute; top: 250px; left: 100px; width: 500px; height: 700px; z-index: 10; display: none">
+		<div id="win_Management" class="window" style="position: absolute; bottom: 21px; left: 28px; width: 711px; height: 767px; z-index: 10; display: none">
 			<div class="windowheader">
 				<div class="windowclose"></div>
 				<div class="windowtitle">Management Support
@@ -390,7 +471,7 @@
 		</div>
 
 
-		<div id="win_SRT" class="window" style="position: absolute; top: 250px; left: 100px; width: 500px; height: 700px; z-index: 10; display: none">
+		<div id="win_SRT" class="window" style="position: absolute; top: 52px; left: 650px; width: 711px; height: 767px; z-index: 10; display:none;">
 			<div class="windowheader">
 				<div class="windowclose"></div>
 				<div class="windowtitle">Web SRT
@@ -402,24 +483,30 @@
 			<div class="windowinner" style="background-color: #f2f2f2;">
 				<div class="fullwindowhtml">
 					<div class="textWindow">
-						<img class="artistImg" src="./hard01/MTV/image_mtv.png">
+						<img class="artistImg" src="./hard01/SRT/srt_web.png" style="max-width: 800px; height: auto !important;">
+						<br>
+						<a href= "https://srt.seoul.kr" target="_blank">새 창에서 링크 열기</a>
 						<div class="height50"></div>
-						&lt;<span class="txtBold">몸 속에 굴러다니던 파편들</span>&gt;
+						&lt;<span class="txtBold">AWESOME!</span>&gt;
 						<br><br>
 						몸의 경계를 상상한다. 두 개의 영상은 실제 경험에서 출발한 픽션이자 애니메이션으로, 신체를 빌려 전하는 존재에 관한 이야기다. 첫 번째 영상 &lt;Go-around(grey area)&gt;(2022)는 비행기가 허공을 맴도는 상태에서, 두 번째 영상 &lt;장기가 떨어지는 듯한 미스테리한 감각&gt;(2022)은 몸속 무언가 분리된 느낌으로부터 시작한다. 양쪽에 등장하는 단 하나의 캐릭터는 불시착한 순례자이자, 구름 같은 피부 또는 깊숙한 곳에서 꿈틀대는 무엇이 되기도 하면서 디지털 물질로써 자신의 존재 이유를 갈아입는다. 각 화면에서 캐릭터의 body는 파편이자 동시에 파편이 떨어지는 공간으로 자리한다. 이야기를 따라가면서 확인할 수 없던 것들을 생생하게 하다 보면 손바닥에서 벗어난 살점, 발끝을 남기고 땅에서 멀어지는 몸처럼 아는 것과 기이한 것이 겹쳐 보인다. 떨어진 장기가 몸의 밑바닥을 알려주듯이, 몸은 내가 알아차리는 순간 경계가 지는 물질을 넘어선 공간이 된다.
 						<br><br>
-						<a href= "javascript:;" onclick="mtvOpen()">새 창에서 링크 열기</a>
 						<div class="height50"></div>
 						Uses:
 						<br>
-						<a href="https://github.com/ashima/webgl-noise" target="_blank">Ashima WebGL Noise</a>, <a href="https://github.com/mrdoob/three.js/" target="_blank">three.js</a>
-						</div>
+						<a href="https://github.com/jquery/jquery" target="_blank">jQuery</a>, <a href="https://github.com/twbs/bootstrap" target="_blank">Bootstrap</a>, <a href="https://github.com/soulwire/sketch.js" target="_blank">Sketch.js</a>
+						<br>
+						<a href="https://github.com/django/django" target="_blank">Django</a>, <a href="https://aws.amazon.com/ko/" target="_blank">AWS</a>
+						<br>
+						<img class="artistImg" src="./hard01/SRT/srt_aws.png" style="max-width: 800px; height: auto !important;">
+						<br><br>
+					</div>
 				</div>
 			</div>
 		</div>
 
 
-		<div id="win_Freepoli" class="window" style="position: absolute; top: 250px; left: 100px; width: 500px; height: 700px; z-index: 10; display: none">
+		<div id="win_Freepoli" class="window" style="position: absolute; top: 79px; left: 677px; width: 711px; height: 767px; z-index: 10; display:none;">
 			<div class="windowheader">
 				<div class="windowclose"></div>
 				<div class="windowtitle">Web Freepoli
@@ -431,24 +518,31 @@
 			<div class="windowinner" style="background-color: #f2f2f2;">
 				<div class="fullwindowhtml">
 					<div class="textWindow">
-						<img class="artistImg" src="./hard01/MTV/image_mtv.png">
+						<img class="artistImg" src="./hard01/Freepoli/freepoli_web.png" style="max-width: 800px; height: auto !important;">
+						<br>
+						<a href= "https://freepoli.kr/" target="_blank">새 창에서 링크 열기</a>
 						<div class="height50"></div>
 						&lt;<span class="txtBold">몸 속에 굴러다니던 파편들</span>&gt;
 						<br><br>
 						몸의 경계를 상상한다. 두 개의 영상은 실제 경험에서 출발한 픽션이자 애니메이션으로, 신체를 빌려 전하는 존재에 관한 이야기다. 첫 번째 영상 &lt;Go-around(grey area)&gt;(2022)는 비행기가 허공을 맴도는 상태에서, 두 번째 영상 &lt;장기가 떨어지는 듯한 미스테리한 감각&gt;(2022)은 몸속 무언가 분리된 느낌으로부터 시작한다. 양쪽에 등장하는 단 하나의 캐릭터는 불시착한 순례자이자, 구름 같은 피부 또는 깊숙한 곳에서 꿈틀대는 무엇이 되기도 하면서 디지털 물질로써 자신의 존재 이유를 갈아입는다. 각 화면에서 캐릭터의 body는 파편이자 동시에 파편이 떨어지는 공간으로 자리한다. 이야기를 따라가면서 확인할 수 없던 것들을 생생하게 하다 보면 손바닥에서 벗어난 살점, 발끝을 남기고 땅에서 멀어지는 몸처럼 아는 것과 기이한 것이 겹쳐 보인다. 떨어진 장기가 몸의 밑바닥을 알려주듯이, 몸은 내가 알아차리는 순간 경계가 지는 물질을 넘어선 공간이 된다.
 						<br><br>
-						<a href= "javascript:;" onclick="mtvOpen()">새 창에서 링크 열기</a>
+						
 						<div class="height50"></div>
 						Uses:
 						<br>
-						<a href="https://github.com/ashima/webgl-noise" target="_blank">Ashima WebGL Noise</a>, <a href="https://github.com/mrdoob/three.js/" target="_blank">three.js</a>
+						<a href="https://github.com/facebook/react" target="_blank">React</a>, <a href="https://github.com/twbs/bootstrap" target="_blank">Bootstrap</a>, <a href="https://github.com/sass/sass" target="_blank">SASS</a>
+						<br>
+						<a href="https://github.com/nodejs/node" target="_blank">Node.js</a>, <a href="https://aws.amazon.com/ko/" target="_blank">AWS</a>
+						<br>
+						<img class="artistImg" src="./hard01/SRT/srt_aws.png" style="max-width: 800px; height: auto !important;">
+						<br><br>
 						</div>
 				</div>
 			</div>
 		</div>
 
 
-		<div id="win_MTV" class="window" style="position: absolute; top: 250px; left: 100px; width: 500px; height: 700px; z-index: 10; display: none">
+		<div id="win_MTV" class="window" style="position: absolute; top: 81px; left: 128px; width: 711px; height: 767px; z-index: 10; display: none">
 			<div class="windowheader">
 				<div class="windowclose"></div>
 				<div class="windowtitle">Watch TV Shows
@@ -460,13 +554,13 @@
 			<div class="windowinner" style="background-color: #f2f2f2;">
 				<div class="fullwindowhtml">
 					<div class="textWindow">
-						<img class="artistImg" src="./hard01/MTV/image_mtv.png">
+						<img class="artistImg" src="./hard01/MTV/image_mtv.png" style="max-width: 562px; height: auto !important;">
+						<br>
+						<a href= "javascript:;" onclick="mtvOpen()">새 창에서 링크 열기</a>
 						<div class="height50"></div>
 						&lt;<span class="txtBold">몸 속에 굴러다니던 파편들</span>&gt;
 						<br><br>
 						몸의 경계를 상상한다. 두 개의 영상은 실제 경험에서 출발한 픽션이자 애니메이션으로, 신체를 빌려 전하는 존재에 관한 이야기다. 첫 번째 영상 &lt;Go-around(grey area)&gt;(2022)는 비행기가 허공을 맴도는 상태에서, 두 번째 영상 &lt;장기가 떨어지는 듯한 미스테리한 감각&gt;(2022)은 몸속 무언가 분리된 느낌으로부터 시작한다. 양쪽에 등장하는 단 하나의 캐릭터는 불시착한 순례자이자, 구름 같은 피부 또는 깊숙한 곳에서 꿈틀대는 무엇이 되기도 하면서 디지털 물질로써 자신의 존재 이유를 갈아입는다. 각 화면에서 캐릭터의 body는 파편이자 동시에 파편이 떨어지는 공간으로 자리한다. 이야기를 따라가면서 확인할 수 없던 것들을 생생하게 하다 보면 손바닥에서 벗어난 살점, 발끝을 남기고 땅에서 멀어지는 몸처럼 아는 것과 기이한 것이 겹쳐 보인다. 떨어진 장기가 몸의 밑바닥을 알려주듯이, 몸은 내가 알아차리는 순간 경계가 지는 물질을 넘어선 공간이 된다.
-						<br><br>
-						<a href= "javascript:;" onclick="mtvOpen()">새 창에서 링크 열기</a>
 						<div class="height50"></div>
 						Uses:
 						<br>
@@ -477,7 +571,7 @@
 		</div>
 
 
-		<div id="win_Ocean" class="window" style="position: absolute; top: 250px; left: 100px; width: 500px; height: 700px; z-index: 10; display: none">
+		<div id="win_Ocean" class="window" style="position: absolute; top: 52px; left: 100px; width: 711px; height: 767px; z-index: 10; display: none">
 			<div class="windowheader">
 				<div class="windowclose"></div>
 				<div class="windowtitle">Ocean Panorama - Human Life
@@ -489,7 +583,9 @@
 			<div class="windowinner" style="background-color: #f2f2f2;">
 				<div class="fullwindowhtml">
 					<div class="textWindow">
-						<img class="artistImg" src="./hard01/ocean/ocean panorama human life.png">
+						<img class="artistImg" src="./hard01/ocean/ocean panorama human life.png" style="max-width: 800px; height: auto !important;">
+						<br>
+						<a href= "javascript:;" onclick="oceanOpen()">새 창에서 링크 열기</a>
 						<div class="height50"></div>
 						<span class="txtBold">&lt;돌아오는 몸 - 디지털 세계가 주는 위로&gt;</span>
 						<br><br>
@@ -498,12 +594,76 @@
 						&lt;돌아오는 몸&gt;(2021)은 위와 같은 질문을 발전시켜 엮어낸 이야기다. CGI 프로그램을 사용해서 제작한 약 14분 길이의 단채널 영상으로, 죽음과 폭력의 비가시성을 도시 속 비둘기의 서사로 풀어냈다. 
 						<br><br>
 						이탈로 칼비노 『보이지 않는 도시들』(1972)과 고야의 &lt;전쟁의 참화들&gt; 연작(1810-1820)을 레퍼런스로 한 3D 영상으로, 영상의 영문 제목은 레퍼런스이기도 한 베셀 반 데어 콜크의  『The Body Keeps the Score』에서 빌려 왔다. 
-						<br><br>
-						<a href= "javascript:;" onclick="oceanOpen()">새 창에서 링크 열기</a>
 						<div class="height50"></div>
 						Reference:
 						<br>
 						<a href="https://threejs.org/examples/webgl_shaders_ocean.html" target="_blank">three.js webgl - shaders - ocean</a>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+		<div id="win_Poetry" class="window" style="position: absolute; top: 52px; left: 500px; width: 711px; height: 767px; z-index: 10; display: none">
+			<div class="windowheader">
+				<div class="windowclose"></div>
+				<div class="windowtitle">App Poetry
+					<div class="windowControl">
+						<div class="button max" >&#11109;</div>
+					</div>				
+				</div>
+			</div>
+			<div class="windowinner" style="background-color: #f2f2f2;">
+				<div class="fullwindowhtml">
+					<div class="textWindow">
+						<img class="artistImg" src="./hard01/ocean/ocean panorama human life.png" style="max-width: 800px; height: auto !important;">
+						<br>
+						<a href= "">새 창에서 링크 열기</a>
+						<div class="height50"></div>
+						<span class="txtBold">&lt;돌아오는 몸 - 디지털 세계가 주는 위로&gt;</span>
+						<br><br>
+						“길에서 지나친 그 죽은 새들은 모두 어디로 갈까?”
+						<br><br>
+						&lt;돌아오는 몸&gt;(2021)은 위와 같은 질문을 발전시켜 엮어낸 이야기다. CGI 프로그램을 사용해서 제작한 약 14분 길이의 단채널 영상으로, 죽음과 폭력의 비가시성을 도시 속 비둘기의 서사로 풀어냈다. 
+						<br><br>
+						이탈로 칼비노 『보이지 않는 도시들』(1972)과 고야의 &lt;전쟁의 참화들&gt; 연작(1810-1820)을 레퍼런스로 한 3D 영상으로, 영상의 영문 제목은 레퍼런스이기도 한 베셀 반 데어 콜크의  『The Body Keeps the Score』에서 빌려 왔다. 
+						<div class="height50"></div>
+						Reference:
+						<br>
+						<a href="https://github.com/flutter/flutter" target="_blank">flutter</a>, <a href="https://github.com/uuuulala/WebGL-typing-tutorial" target="_blank">Typing Effects with Three.js</a>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+		<div id="win_NoFile" class="window" style="position: absolute; top: 52px; left: 500px; width: 711px; height: 767px; z-index: 10; display: none">
+			<div class="windowheader">
+				<div class="windowclose"></div>
+				<div class="windowtitle">My File
+					<div class="windowControl">
+						<div class="button max" >&#11109;</div>
+					</div>				
+				</div>
+			</div>
+			<div class="windowinner" style="background-color: #f2f2f2;">
+				<div class="fullwindowhtml">
+					<div class="textWindow">
+						<img class="artistImg" src="./hard01/ocean/ocean panorama human life.png" style="max-width: 800px; height: auto !important;">
+						<br>
+						<a href= "">새 창에서 링크 열기</a>
+						<div class="height50"></div>
+						<span class="txtBold">&lt;돌아오는 몸 - 디지털 세계가 주는 위로&gt;</span>
+						<br><br>
+						“길에서 지나친 그 죽은 새들은 모두 어디로 갈까?”
+						<br><br>
+						&lt;돌아오는 몸&gt;(2021)은 위와 같은 질문을 발전시켜 엮어낸 이야기다. CGI 프로그램을 사용해서 제작한 약 14분 길이의 단채널 영상으로, 죽음과 폭력의 비가시성을 도시 속 비둘기의 서사로 풀어냈다. 
+						<br><br>
+						이탈로 칼비노 『보이지 않는 도시들』(1972)과 고야의 &lt;전쟁의 참화들&gt; 연작(1810-1820)을 레퍼런스로 한 3D 영상으로, 영상의 영문 제목은 레퍼런스이기도 한 베셀 반 데어 콜크의  『The Body Keeps the Score』에서 빌려 왔다. 
+						<div class="height50"></div>
+						Reference:
+						<br>
+						<a href="https://github.com/flutter/flutter" target="_blank">flutter</a>, <a href="https://github.com/uuuulala/WebGL-typing-tutorial" target="_blank">Typing Effects with Three.js</a>
 					</div>
 				</div>
 			</div>
@@ -546,5 +706,14 @@
 	 window.open('index_ocean.html','oceanResize','height=' + screen.height + ',width=' + screen.width + 'fullscreen=yes');
 	}
 </script>
+
+<!--tetris-->
+<script type="text/javascript" src="./hard01/js-tetris-master/constants.js"></script>
+<script type="text/javascript" src="./hard01/js-tetris-master/board.js"></script>
+<script type="text/javascript" src="./hard01/js-tetris-master/piece.js"></script>
+<script type="text/javascript" src="./hard01/js-tetris-master/sound002.js"></script>
+<script type="text/javascript" src="./hard01/js-tetris-master/main.js"></script>
+
+
 
 </html>

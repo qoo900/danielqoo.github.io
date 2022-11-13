@@ -14,10 +14,10 @@
 html, body { 
     width:auto;
     height:auto;
-    margin:0; 
+    margin: 0; 
     overflow: hidden;
     font-family: 'DungGeunMo', sans-serif;
-    background-color: #010080;
+    background-color: darkblue;
     font-size: 20px;
 
 }
@@ -152,7 +152,7 @@ textarea.fullwindowdosprompt {
     display: block;
     margin: 5px auto 0 auto;
 	width:140px;
-    padding: 2px;
+    padding: 5px;
     cursor: default;
 }
 
@@ -163,31 +163,17 @@ textarea.fullwindowdosprompt {
 
 .textWindow{
 	padding:10px;
-	line-height:28px;
+	line-height:40px;
 
 
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 .iconImg{
-	width:60px;
+	width:70px;
 }
 
 .iconImgClone{
-	width:60px;
+	width:70px;
 }
 .certText{
 	position:fixed;
@@ -425,3 +411,49 @@ ul{
 .tg .tg_white{	height:30px;}
 
 
+
+
+
+
+/* tetris */
+.grid {
+display: grid;
+grid-template-columns: 320px 200px;
+position: absolute;
+right: 5%;
+z-index: 1;
+}
+
+.left-column {
+display: flex;
+flex-direction: column;
+}
+
+.right-column {
+display: flex;
+flex-direction: column;
+justify-content: space-between;
+}
+
+.game-board {
+border: solid 2px;
+}
+
+.play-button {
+background-color: #4caf50;
+font-size: 16px;
+padding: 15px 30px;
+cursor: pointer;
+}
+
+#pause-btn {
+display: none;
+}
+
+#sound-speaker{
+font-size:30px;
+}
+
+.sound-item{
+cursor:pointer;
+}

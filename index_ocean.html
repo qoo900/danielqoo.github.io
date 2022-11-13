@@ -269,6 +269,7 @@
             }
 
 
+
             init();
             animate();
 
@@ -360,9 +361,12 @@
                     }
 
                     model.position.x = getRandomInt(-100, 100)
+                    model.position.y = -3.0
                     model.position.z = getRandomInt(0, 100)
-                    model.rotation.y = (4/2)*Math.PI;
-                    model.scale.set(10.0, 10.0, 10.0);
+                    model.rotation.x = (3/2)*Math.PI;
+                    model.rotation.y = getRandomInt(-50, 50)
+                    model.rotation.z = getRandomInt(0, 100)
+                    model.scale.set(1.5, 1.5, 1.5);
 
                     tweenModel(model, getRandomInt(3000, 12000));
                     scene.add( model );
@@ -405,12 +409,12 @@
                     const loader = new GLTFLoader();
                     loader.load(
                         // resource URL
-                        "./img/dead_body.glb",
+                        "./hard01/Ocean/easter_island_moai.glb",
                         // called when the resource is loaded
                         function ( gltf ){
                             model = gltf.scene;
                             model.name = "model-face";
-                            model.scale.set(10.0, 10.0, 10.0);
+                            model.scale.set(1.0, 1.0, 1.0);
                             // model.position.set(0,0,0);
 
                             // Set texture and
@@ -424,13 +428,14 @@
                                     }
 
                                     // Set big model
+                                    child.position.x = -80.0
                                     child.position.z = -50.0
-                                    child.position.y = 5.0
+                                    child.position.y = 500.0
                                     //child.rotation.x = -(1/2)*Math.PI;
-                                    child.rotation.y = (1/2)*Math.PI;
+                                    child.rotation.y = (22/12)*Math.PI;
                                     //child.rotation.z = (1/2)*Math.PI;
                                     child.material.map = texture;
-                                    //console.log("mat-color:",child.material.color);
+                                    console.log("mat-color:",child.material.color);
                                     //child.material.color = new THREE.Color("rgb(255, 255, 255)");
                                     //child.material.color = new THREE.Color( 1.0, 1.0, 1.0 )
                                     //child.material.envMap = envMap;
@@ -443,6 +448,7 @@
                                     model2.position.y = -2.1
                                     model2.position.z = 8.0
                                     model2.rotation.y = Math.PI;
+                                    
 
                                     tweenModel(model2, 8000);
                                     scene.add( model2 );
@@ -466,7 +472,7 @@
 
 
                 function setColorGui(mesh){
-                    let folder = gui.addFolder('Body');
+                    let folderBody = gui.addFolder('Body');
 
                     let params = {
                         //color: 0xffffff,
@@ -479,14 +485,29 @@
                         mesh.material.color = new THREE.Color( params.r, params.g, params.b );
                     }
 
-                    folder.add( params, "r", 0.0, 5.0, 0.01 ).onChange( colorChanged );
-                    folder.add( params, "g", 0.0, 5.0, 0.01 ).onChange( colorChanged );
-                    folder.add( params, "b", 0.0, 5.0, 0.01 ).onChange( colorChanged );
+                    folderBody.add( params, "r", 0.0, 5.0, 0.01 ).onChange( colorChanged );
+                    folderBody.add( params, "g", 0.0, 5.0, 0.01 ).onChange( colorChanged );
+                    folderBody.add( params, "b", 0.0, 5.0, 0.01 ).onChange( colorChanged );
+                    folderBody.open();
 
                     colorChanged();
+
+                    renderer.domElement.addEventListener('click', randomizeParams001, false);
+                    function randomizeParams001() {
+
+                        function getRandomInt(min, max) {
+                            min = Math.ceil(min);
+                            max = Math.floor(max);
+                            return Math.floor(Math.random() * (max - min) + min); //The maximum is exclusive and the minimum is inclusive
+                        }
+                        params.r = getRandomInt(0.00, 5.00);
+                        params.g = getRandomInt(0.00, 5.00);
+                        params.b = getRandomInt(0.00, 5.00);
+                        colorChanged();
+
+                    }
+
                 }
-
-
 
 
                 setModel();
@@ -600,7 +621,6 @@
 
 
 
-
                 // create an AudioListener and add it to the camera
                 const listener = new THREE.AudioListener();
                 camera.add( listener );
@@ -610,14 +630,12 @@
 
                 // load a sound and set it as the Audio object's buffer
                 const audioLoader = new THREE.AudioLoader();
-                audioLoader.load( './hard01/ocean/creepy-ambient.mp3', function( buffer ) {
+                audioLoader.load( './hard01/Ocean/honne_no_song_without_you_320kbps.mp3', function( buffer ) {
                     sound.setBuffer( buffer );
                     sound.setLoop( true );
-                    sound.setVolume( 2.0 );
+                    sound.setVolume( 1.0 );
                     sound.play();
                 });
-
-
 
 
 
@@ -627,7 +645,7 @@
             	// GUI
 
             	const gui = new GUI();
-
+                
             	const folderSky = gui.addFolder( 'Sky' );
             	folderSky.add( parameters, 'elevation', -2.5, 2.5, 0.1 ).onChange( updateSun );
             	folderSky.add( parameters, 'azimuth', - 180, 180, 0.1 ).onChange( updateSun );
@@ -636,7 +654,7 @@
             	const waterUniforms = water.material.uniforms;
 
             	const folderWater = gui.addFolder( 'Water' );
-            	folderWater
+                folderWater
             		.add( waterUniforms.distortionScale, 'value', 0, 8, 0.1 )
             		.name( 'distortionScale' );
             	folderWater.add( waterUniforms.size, 'value', 0.1, 10, 0.1 ).name( 'size' );
@@ -737,6 +755,45 @@
 
                 gui.close();
 
+
+
+                renderer.domElement.addEventListener('click', randomizeParams002, false);
+                
+                function randomizeParams002() {
+
+                    function getRandomQ(min, max) {
+                        // min = min.toFixed(1);
+                        // max = max.toFixed(1);
+                        return Math.random().toFixed(2) * (max - min) + min ; //The maximum is exclusive and the minimum is inclusive
+                    }
+
+                    function getRandomInt(min, max) {
+                        min = Math.ceil(min);
+                        max = Math.floor(max);
+                        return Math.floor(Math.random() * (max - min) + min); //The maximum is exclusive and the minimum is inclusive
+                    }
+
+                    water.material.uniforms.waveA.value[ 0 ] = Math.sin( ( getRandomInt(0, 359) * Math.PI ) / 180 );
+            		water.material.uniforms.waveA.value[ 1 ] = Math.cos( ( getRandomInt(0, 359) * Math.PI ) / 180 );
+                    water.material.uniforms.waveA.value[ 2 ] = getRandomQ(0.00, 1.00);
+                    water.material.uniforms.waveA.value[ 3 ] = getRandomInt(1, 100);
+
+                    water.material.uniforms.waveB.value[ 0 ] = Math.sin( ( getRandomInt(0, 359) * Math.PI ) / 180 );
+            		water.material.uniforms.waveB.value[ 1 ] = Math.cos( ( getRandomInt(0, 359) * Math.PI ) / 180 );
+                    water.material.uniforms.waveB.value[ 2 ] = getRandomQ(0.00, 1.00);
+                    water.material.uniforms.waveB.value[ 3 ] = getRandomInt(1, 100);
+
+                    water.material.uniforms.waveC.value[ 0 ] = Math.sin( ( getRandomInt(0, 359) * Math.PI ) / 180 );
+            		water.material.uniforms.waveC.value[ 1 ] = Math.cos( ( getRandomInt(0, 359) * Math.PI ) / 180 );
+                    water.material.uniforms.waveC.value[ 2 ] = getRandomQ(0.00, 1.00);
+                    water.material.uniforms.waveC.value[ 3 ] = getRandomInt(1, 100);
+
+                    water.material.uniforms.size.value = getRandomInt(1, 10);
+
+                }
+
+
+
             }
 
             function onWindowResize() {
@@ -765,13 +822,21 @@
             	render();
             	//stats.update();
 
+
             }
 
             function render() {
 
+                
             	renderer.render( scene, camera );
-
+                
             }
+
+
+
+
+
+
         </script>
     </body>
 </html>
