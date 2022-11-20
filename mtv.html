@@ -9,9 +9,10 @@
 		/* Fonts */
 		@font-face {
 			font-family: 'DungGeunMo';
-			src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/DungGeunMo.woff') format('woff');
+			src: url('./fonts/DungGeunMo.woff') format('woff');
 			font-weight: normal;
 			font-style: normal;
+			font-display: block;
 		}
 
 		body {
@@ -65,12 +66,15 @@
 
 		#gui {
 			position: absolute;
+			font-family: 'DungGeunMo', sans-serif;
 			top: 2px;
 			left: 320px;
 			z-index: 3;
 		}
 
 	</style>
+
+	<link rel="preload" href="./fonts/DungGeunMo.woff" as="font" type="font/woff" crossorigin/>
 
 	<!--favicon-->
 	<link rel="apple-touch-icon" sizes="57x57" href="./hard01/mtv_threejs/favicon/apple-icon-57x57.png">
