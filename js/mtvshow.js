@@ -238,4 +238,11 @@ export default function mtvshow() {
 
         camera.updateProjectionMatrix();
     }
+
+    function mtvResize(){
+        var vwidth = document.getElementById('tbl').clientWidth;
+        var vheight = document.getElementById('tbl').clientHeight;  
+        window.resizeTo(vwidth,vheight);
+    }
+
 }
