@@ -8,6 +8,25 @@
             content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"
         />
 
+        <!--favicon-->
+        <link rel="apple-touch-icon" sizes="57x57" href="./hard01/ocean_threejs/favicon/apple-icon-57x57.png">
+        <link rel="apple-touch-icon" sizes="60x60" href="./hard01/ocean_threejs/favicon/apple-icon-60x60.png">
+        <link rel="apple-touch-icon" sizes="72x72" href="./hard01/ocean_threejs/favicon/apple-icon-72x72.png">
+        <link rel="apple-touch-icon" sizes="76x76" href="./hard01/ocean_threejs/favicon/apple-icon-76x76.png">
+        <link rel="apple-touch-icon" sizes="114x114" href="./hard01/ocean_threejs/favicon/apple-icon-114x114.png">
+        <link rel="apple-touch-icon" sizes="120x120" href="./hard01/ocean_threejs/favicon/apple-icon-120x120.png">
+        <link rel="apple-touch-icon" sizes="144x144" href="./hard01/ocean_threejs/favicon/apple-icon-144x144.png">
+        <link rel="apple-touch-icon" sizes="152x152" href="./hard01/ocean_threejs/favicon/apple-icon-152x152.png">
+        <link rel="apple-touch-icon" sizes="180x180" href="./hard01/ocean_threejs/favicon/apple-icon-180x180.png">
+        <link rel="icon" type="image/png" sizes="192x192"  href="./hard01/ocean_threejs/favicon/android-icon-192x192.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="./hard01/ocean_threejs/favicon/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="96x96" href="./hard01/ocean_threejs/favicon/favicon-96x96.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="./hard01/ocean_threejs/favicon/favicon-16x16.png">
+        <link rel="manifest" href="./hard01/ocean_threejs/favicon/manifest.json">
+        <meta name="msapplication-TileColor" content="#ffffff">
+        <meta name="msapplication-TileImage" content="./hard01/ocean_threejs/favicon/ms-icon-144x144.png">
+        <meta name="theme-color" content="#ffffff">
+
         <style>
             body {
                 width : 100%;
@@ -18,16 +37,27 @@
                 overflow: hidden;
             }
 
-            #Info {
+            #Info_001 {
 			color: #fff;
 			position: absolute;
-			bottom: 70px;
+			bottom: 5em;
 			padding: 5px 20px;
 			font-weight: 100;
 			font-size: 18px;
 			background-color: #000;
 			z-index: 3;
-		}
+		    }
+
+            #Info_002 {
+			color: #fff;
+			position: absolute;
+			bottom: 3.1em;
+			padding: 5px 20px;
+			font-weight: 100;
+			font-size: 18px;
+			background-color: #000;
+			z-index: 3;
+		    }
 
         </style>
 
@@ -169,13 +199,10 @@
     </head>
     <body>
         <div id="container">
-            <div id='Info'>Click Screen to randomize</div>
+            <div id='Info_001'>Click Screen to randomize</div>
+            <div id='Info_002'></div>
         </div>
-        <div id="info">
-            
-        </div>
-
-		
+        
 
         <script type="module">
             import * as THREE from './lib/three.module.js';
@@ -192,6 +219,19 @@
             let camera, scene, renderer;
             let controls, water, sun;
             let clock, delta, boxes, numBoxes;
+
+            const consoleDiv = document.getElementById("Info_002")
+            const consoleToHtml = function() {
+                consoleDiv.textContent = `${(new Date()).toLocaleString("ko-KR")}`
+                Array.from(arguments).forEach(el => {
+                    consoleDiv.textContent = " "
+                    const insertValue = typeof el === "object" ? JSON.stringify(el) : el
+                    consoleDiv.textContent += insertValue
+                })
+                consoleDiv.textContent += "\n"
+            }
+            
+            window.console.log = consoleToHtml
 
             const waves = {
             	A: { direction: 0, steepness: 0, wavelength: 25 },
@@ -435,7 +475,7 @@
                                     child.rotation.y = (22/12)*Math.PI;
                                     //child.rotation.z = (1/2)*Math.PI;
                                     child.material.map = texture;
-                                    console.log("mat-color:",child.material.color);
+                                    // console.log("mat-color:",child.material.color);
                                     //child.material.color = new THREE.Color("rgb(255, 255, 255)");
                                     //child.material.color = new THREE.Color( 1.0, 1.0, 1.0 )
                                     //child.material.envMap = envMap;
@@ -811,7 +851,7 @@
             	delta = clock.getDelta();
             	water.material.uniforms[ 'time' ].value += delta;
 
-                var speed = Date.now() * 0.0001;
+                var speed = Date.now() * 0.00025;
                 camera.position.x = Math.sin(speed) * 60;
                 
                 camera.lookAt(scene.position);
