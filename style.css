@@ -405,7 +405,7 @@ ul{
 }
 
 
-.tg  {border-collapse:collapse;border-spacing:0;border:0px;font-size:20px;width:100%;}
+.tg  {border-collapse:collapse;border-spacing:0;border:0px;font-size:20px;width:100%;line-height: 40px;}
 .tg td:first-child{width:40%;}
 .tg td{ padding:5px;}
 .tg .tg_white{	height:30px;}
