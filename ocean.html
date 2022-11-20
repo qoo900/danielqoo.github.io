@@ -500,8 +500,7 @@
                         },
                         // called while loading is progressing
                         function ( xhr ) {
-                            console.log( ( xhr.loaded / xhr.total * 100 ) + '% loaded' );
-                            console.log('100% loaded')
+                            console.log( ( Math.round(xhr.loaded) / Math.round(xhr.total) * 100 ) + '% loaded' );
                         },
                         // called when loading has error
                         function ( error ) {
@@ -677,7 +676,6 @@
                     sound.setVolume( 1.0 );
                     sound.play();
                 });
-
 
 
             	//stats = new Stats();

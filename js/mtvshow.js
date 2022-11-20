@@ -26,7 +26,7 @@ export default function mtvshow() {
         video.muted = false;
         video.src = './hard01/mtv_threejs/Avril Lavigne - Sk8er Boi (David Letterman 10⧸02⧸2002).mp4';
         video.play();
-
+        
         //init video texture
         videoTexture = new THREE.Texture(video);
         videoTexture.minFilter = THREE.LinearFilter;
