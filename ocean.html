@@ -409,7 +409,7 @@
                     const loader = new GLTFLoader();
                     loader.load(
                         // resource URL
-                        "./hard01/Ocean/easter_island_moai.glb",
+                        "./hard01/ocean_threejs/easter_island_moai.glb",
                         // called when the resource is loaded
                         function ( gltf ){
                             model = gltf.scene;
@@ -630,7 +630,7 @@
 
                 // load a sound and set it as the Audio object's buffer
                 const audioLoader = new THREE.AudioLoader();
-                audioLoader.load( './hard01/Ocean/honne_no_song_without_you_320kbps.mp3', function( buffer ) {
+                audioLoader.load( './hard01/ocean_threejs/honne_no_song_without_you_320kbps.mp3', function( buffer ) {
                     sound.setBuffer( buffer );
                     sound.setLoop( true );
                     sound.setVolume( 1.0 );

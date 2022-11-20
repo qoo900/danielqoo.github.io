@@ -17,6 +17,15 @@
 		<script src="./js/code.js"></script>
 		<script src="./lib/jquery.touchSwipe.min.js"></script>
 
+		<!--Mobile Switch-->
+		<script type="text/javascript">
+			var UserAgent = navigator.userAgent; 
+			if (UserAgent.match(/iPhone|ipad|Android|Windows CE|BlackBerry|Symbian|Windows Phone|webOS|Opera Mini|Opera Mobi|POLARIS|IEMobile|lgtelecom|nokia|SonyEricsson/i) != null || UserAgent.match(/LG|SAMSUNG|Samsung/) != null)
+				{
+				location.href = "./mobile.html";
+				}
+		</script>
+
 		<!--3Dface-->
 
 		<script async src="https://unpkg.com/es-module-shims@1.3.6/dist/es-module-shims.js"></script>
@@ -168,10 +177,10 @@
 									<li><a href="javascript:newWindow('#win_MTV');">Watch TV Shows</a></li>
 								</ul>
 							</li>
-							<li><a href="#">3D</a>
+							<li><a href="#">Works</a>
 								<ul class="main3">
-									<li><a href="javascript:newWindow('#win_System');">Web System Dev</a></li>
-									<li><a href="javascript:newWindow('#win_Management');">Management</a></li>
+									<li><a href="javascript:newWindow('#win_System');">Web HR System Dev</a></li>
+									<li><a href="javascript:newWindow('#win_Management');">Works Archive</a></li>
 								</ul>
 							</li>
 						</ul>
