@@ -247,7 +247,7 @@ textarea.fullwindowdosprompt {
 
 .height_upper{
 	width:100%;
-	height:15px;
+	height:0.5em;
 }
 
 .windowControl{
@@ -456,6 +456,7 @@ ul{
 
 .mobile_li{
 	width:30%;
+	height: auto;
 	display:inline-block;
 	text-align:center;
 	padding:0;
