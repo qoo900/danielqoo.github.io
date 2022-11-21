@@ -170,8 +170,8 @@ function shuffleArray(array) {
 
 function getTime() {
 	var date = new Date();
-	var today = new Intl.DateTimeFormat('kr',{dateStyle : "short", timeStyle : "medium"}).format(date)
-	document.getElementById('today').innerHTML = today;
+	var today = new Intl.DateTimeFormat('kr',{dateStyle : "short", timeStyle : "medium"}).format(date);
+	document.getElementById('today').textContent = today;
 	window.setTimeout(getTime, 1000);
 }
 
@@ -185,15 +185,16 @@ function getCount() {
 	var diffMinute = Math.floor(term % (1000 * 60 * 60) / (1000 * 60));
 	var diffSecond = Math.floor(term % (1000 * 60) / (1000));
 	var diffDay = parseInt(term / (1000 * 60 * 60 * 24));
-	document.getElementById('countdown').innerHTML = diffDay+":"+diffHour+":"+diffMinute+":"+diffSecond;
+	document.getElementById('countdown').textContent = diffDay+":"+diffHour+":"+diffMinute+":"+diffSecond;
 	window.setTimeout(getCount, 1000);
 }
 
 function getYear() {
 	var tdate = new Date();
 	var tyear = tdate.getUTCFullYear();
-	document.getElementById('tyear').innerHTML = tyear;
-	window.setTimeout(getTime, 1000);
+	document.getElementById('tyear001').textContent = tyear;
+	document.getElementById('tyear002').textContent = tyear;
+	window.setTimeout(getYear, 1000);
 }
 
 
@@ -251,7 +252,7 @@ function getAge(){
 		age--;
 	}
 
-	document.getElementById('getAge').innerHTML = age;
+	document.getElementById('getAge').textContent = age;
 	window.setTimeout(getAge, 1000);
 
 }
