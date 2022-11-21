@@ -445,7 +445,7 @@ ul{
 }
 
 /* 타임테이블용 */
-.tg  {border-collapse:collapse;border-spacing:0;border:0px;font-size:18px;width:auto;margin-left:10px;}
+.tg  {border-collapse:collapse;border-spacing:0;border:0px;font-size:18px;width:auto;margin-left:10px;line-height: 40px;}
 .tg .tg_white{	height:10px;}
 
 .txtWhite{
