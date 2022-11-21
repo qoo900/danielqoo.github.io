@@ -15,21 +15,21 @@
 			font-display: block;
 		}
 
-		@media( orientation: portrait ){
+		/* @media( orientation: portrait ){
 			html {
 			transform: rotate(-90deg);
-			/* transform-origin: top left; */
-			/* position: absolute; */
-			/* top: 100%;
-			left: 0%; */
+			transform-origin: top left;
+			position: absolute;
+			top: 100%;
+			left: 0%;
 			width: 100vh;
 			height: 100vw;
 			}
-		}
+		} */
 
 		body {
 			margin: 0;
-			background-color: lightgrey;
+			background-color: #bfbfbf;
 			overflow-x:hidden;
 			overflow-y:hidden;
 		}
@@ -37,31 +37,44 @@
 		#mtvInfo {
 			color: #fff;
 			position: absolute;
-			top: 353px;
+			top: 15.2em;
 			padding: 5px 20px;
 			font-family: 'DungGeunMo', sans-serif;
 			font-weight: 100;
-			font-size: 18px;
+			font-size: 40px;
 			background-color: #000;
 			z-index: 3;
 		}
 
-		#mtvScript {
+		#mtvScript001 {
 			color: #fff;
 			position: absolute;
 			top: 2px;
 			padding: 5px 20px;
 			font-family: 'DungGeunMo', sans-serif;
 			font-weight: 100;
-			font-size: 18px;
+			font-size: 40px;
 			background-color: #000;
 			z-index: 3;
 		}
 
+		#mtvScript002 {
+			color: #bfbfbf;
+			position: absolute;
+			top: 17.2em;
+			padding: 5px 20px;
+			font-family: 'DungGeunMo', sans-serif;
+			font-weight: 100;
+			font-size: 40px;
+			background-color: #bfbfbf;
+			z-index: 3;
+		}
+
 		#container {
-			width: 200em;
-    		height: 200em;
+			height: 60em;
+        	width: 60em;
 			background-image: url("./img/vintage_tv_remove.png");
+			background-size: contain;
 			background-repeat: no-repeat;
 			background-position: initial;
 			z-index: 2;
@@ -78,8 +91,8 @@
 
 		#gui {
 			position: absolute;
-			top: 2px;
-			left: 320px;
+			top: 0.1em;
+			left: 45em;
 			z-index: 3;
 		}
 
@@ -120,7 +133,7 @@
 	<script src='./lib/StaticShader.js'></script>
 
 	<script type="module">
-		import mtvshow from './js/mtvshow.js';
+		import mtvshow from './js/mtvshow_m.js';
 		mtvshow();
 	</script>
 
@@ -135,7 +148,8 @@
 	<div id="container">
 
 		<div id='mtvInfo'>Click Screen to randomize</div>
-		<div id='mtvScript'>Ashima WebGL Noise, three.js</div>
+		<div id='mtvScript001'>Ashima WebGL Noise, three.js</div>
+		<div id='mtvScript002'><img src="./img/header_text.png" style="width:23em;"></div>
 
 	</div>
 	
