@@ -34,7 +34,7 @@
 			overflow-y:hidden;
 		}
 
-		#mtvInfo {
+		#mtvInfo001 {
 			color: #fff;
 			position: absolute;
 			top: 15.2em;
@@ -43,6 +43,18 @@
 			font-weight: 100;
 			font-size: 40px;
 			background-color: #000;
+			z-index: 3;
+		}
+
+		#mtvInfo002 {
+			color: #fff;
+			position: absolute;
+			top: 19.1em;
+			padding: 5px 20px;
+			font-family: 'DungGeunMo', sans-serif;
+			font-weight: 100;
+			font-size: 40px;
+			background-color: #bfbfbf;
 			z-index: 3;
 		}
 
@@ -147,9 +159,10 @@
 
 	<div id="container">
 
-		<div id='mtvInfo'>Click Screen to randomize</div>
+		<div id='mtvInfo001'>Click Screen to randomize</div>
 		<div id='mtvScript001'>Ashima WebGL Noise, three.js</div>
 		<div id='mtvScript002'><img src="./img/header_text.png" style="width:23em;"></div>
+		<div id='mtvInfo002'>WebGL 이슈로 iOS 및 Safari에서는 VideoTexture가 실행되지 않습니다</div>
 
 	</div>
 	
