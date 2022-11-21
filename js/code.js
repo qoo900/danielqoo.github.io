@@ -137,7 +137,6 @@ function screenSaver(){
 	},5000);	
 }
 
-
 function screenSaverExit(){
 	clearInterval(screenSaverInterval);
 	ssCount =0;
@@ -276,5 +275,3 @@ function ScreenSaver() {
 		}).click();
 	});
 }
-
-

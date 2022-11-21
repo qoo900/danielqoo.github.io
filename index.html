@@ -11,12 +11,12 @@
 		<meta property="og:description" content="Contact: tablern99@gmail.com"/>
 		<meta property="og:image" content="https://qoo900.com/img/image_me.png"/>
 
-		<link rel="preload" href="./fonts/DungGeunMo.woff" as="font" type="font/woff" crossorigin/>
-
 		<link rel="apple-touch-icon" sizes="180x180" href="/img/apple-touch-icon.png">
 		<link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32x32.png">
 		<link rel="icon" type="image/png" sizes="16x16" href="/img/favicon-16x16.png">
 		<link rel="manifest" href="/img/site.webmanifest">
+
+		<link rel="preload" href="./fonts/DungGeunMo.woff" as="font" type="font/woff" crossorigin/>
 		<link rel="stylesheet" href="style.css" type="text/css">
 
 		<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css" type="text/css">
@@ -27,13 +27,13 @@
 		<script src="./lib/jquery.touchSwipe.min.js"></script>
 
 		<!--Mobile Switch-->
-		<script type="text/javascript">
+		<!--<script type="text/javascript">
 			var UserAgent = navigator.userAgent; 
 			if (UserAgent.match(/iPhone|ipad|Android|Windows CE|BlackBerry|Symbian|Windows Phone|webOS|Opera Mini|Opera Mobi|POLARIS|IEMobile|lgtelecom|nokia|SonyEricsson/i) != null || UserAgent.match(/LG|SAMSUNG|Samsung/) != null)
 				{
 				location.href = "./mobile.html";
 				}
-		</script>
+		</script>-->
 
 		<!--3Dface-->
 
@@ -111,18 +111,32 @@
 		};
 	</script>
 
+	<!--Full Screen-->
+	<script>
+		function openFullscreen() {
+			var qooPC = document.documentElement;
+			if (qooPC.requestFullscreen)
+				qooPC.requestFullscreen();
+			else if (qooPC.webkitRequestFullscreen) // Chrome, Safari (webkit)
+				qooPC.webkitRequestFullscreen();
+			else if (qooPC.mozRequestFullScreen) // Firefox
+				qooPC.mozRequestFullScreen();
+			else if (qooPC.msRequestFullscreen) // IE or Edge
+				qooPC.msRequestFullscreen();
+		}
+	</script>
 
 	</head>
 
 
-  	<body>		
+  	<body>
 
 		<!-- 첫 화면 -->
 
 		<div id="intro" class="window selectedwindow" style="position: absolute; top: 50%; left: 50%; width: 1000px; height: 700px; z-index: 101; margin-left:-500px;margin-top:-335px;display:block">
 			<div class="windowheader">
 				<div class="windowclose introclose"></div>
-				<div class="windowtitle" onclick="screenSaver()"><font id="neonStyle001">OPEN</font> / <font id="neonStyle002">24 HRS</font></div>
+				<div class="windowtitle" onclick="screenSaver();"><font id="neonStyle001">OPEN</font> / <font id="neonStyle002">24 HRS</font></div>
 			</div>
 			<div class="windowinner" style="background:#f5f5f5;">
 				<div class="fullwindowhtml">
@@ -140,7 +154,7 @@
 						(작동 시간 : <span id="countdown"></span>)
 						<br><br>
 						</div>
-						<button class="introclose" style="background:#c0bfbf;border:1px solid black;width:120px;text-align:Center;font-family: 'DungGeunMo';height:28px;font-size:24px;">Enter</button>
+						<button class="introclose" style="background:#c0bfbf;border:1px solid black;width:120px;text-align:Center;font-family: 'DungGeunMo';height:28px;font-size:24px;" onclick="openFullscreen();">Enter</button>
 						<br><br>
 					</div>
 				</div>
@@ -187,7 +201,7 @@
 							</li>
 							<li><a href="#">Works</a>
 								<ul class="main3">
-									<li><a href="javascript:newWindow('#win_System');">Web HR System Dev</a></li>
+									<li><a href="javascript:newWindow('#win_System');">Web HR System</a></li>
 									<li><a href="javascript:newWindow('#win_Management');">Works Archive</a></li>
 								</ul>
 							</li>
@@ -975,7 +989,5 @@
 <script type="text/javascript" src="./hard01/js-tetris-master/piece.js"></script>
 <script type="text/javascript" src="./hard01/js-tetris-master/sound002.js"></script>
 <script type="text/javascript" src="./hard01/js-tetris-master/main.js"></script>
-
-
 
 </html>
