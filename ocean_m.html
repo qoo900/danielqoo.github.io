@@ -81,24 +81,7 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/tween.js/18.6.4/tween.umd.js" integrity="sha512-lIKG1kC5TMb1Zx32vdz1n31YJMZRknVY20U9MJ28hD3y2c0OKN0Ce5NhJji78v8zX5UOSsm+MTBOcJt7yMBnSg==" crossorigin="anonymous"></script>
 
         <script type='module'>
-            function unlockIOSSound()
-            {
-                var listener = new THREE.AudioListener();
-                var sound = new THREE.PositionalAudio(listener);
-                var audioLoader = new THREE.AudioLoader();
 
-                function playIOSUnlockSound(){
-                    window.removeEventListener('touchstart', playIOSUnlockSound);
-                    document.removeEventListener('touchstart', playIOSUnlockSound);
-
-                    var source = listener.context.createBufferSource();
-                    source.connect(listener.context.destination);
-                    source.start();
-                }
-
-                window.addEventListener('touchstart', playIOSUnlockSound);
-                document.addEventListener('click', playIOSUnlockSound);
-            }
         </script>
 
         <script id="vertexShader" type="x-shader/x-vertex">
@@ -693,6 +676,19 @@
 
                 // create a global audio source
                 const sound = new THREE.Audio( listener );
+
+                function playIOSUnlockSound(){
+                    window.removeEventListener('touchstart', playIOSUnlockSound);
+                    document.removeEventListener('touchstart', playIOSUnlockSound);
+
+                    var source = listener.context.createBufferSource();
+                    source.connect(listener.context.destination);
+                    source.start();
+                }
+
+                window.addEventListener('touchstart', playIOSUnlockSound);
+                document.addEventListener('click', playIOSUnlockSound);
+
 
                 // load a sound and set it as the Audio object's buffer
                 const audioLoader = new THREE.AudioLoader();
