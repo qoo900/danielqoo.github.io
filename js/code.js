@@ -198,7 +198,7 @@ function getYear() {
 }
 
 
-function DdayPoetry() {
+function DdayCountdown() {
 	const countDownTimer = function (id, date) {
 		var _vDate = new Date(date); // 전달 받은 일자
 		var _second = 1000;
