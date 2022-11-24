@@ -918,7 +918,7 @@
 			<div class="windowinner" style="background-color: #f2f2f2;">
 				<div class="fullwindowhtml">
 					<div class="textWindow">
-						<video autoplay loop style="width: 100%; max-width: 800px; display: block;">
+						<video id="vid" autoplay="autoplay" loop="loop" muted="muted" playsinline style="width: 100%; max-width: 800px; display: block;">
 							<source src="./hard01/t-goups_app/sky-white-dove-flying.mp4" type="video/mp4">
 						</video>
 						<br>
@@ -987,5 +987,9 @@
 <script type="text/javascript" src="./hard01/js-tetris-master/piece.js"></script>
 <script type="text/javascript" src="./hard01/js-tetris-master/sound002.js"></script>
 <script type="text/javascript" src="./hard01/js-tetris-master/main.js"></script>
+
+<script>
+    document.getElementById('vid').play();
+</script>
 
 </html>
