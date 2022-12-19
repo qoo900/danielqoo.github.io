@@ -112,7 +112,7 @@
 		</script>
 
 		<!--Full Screen-->
-		<script>
+		<!-- <script>
 			function openFullscreen() {
 				var qooPC = document.documentElement;
 				if (qooPC.requestFullscreen)
@@ -124,7 +124,7 @@
 				else if (qooPC.msRequestFullscreen) // IE or Edge
 					qooPC.msRequestFullscreen();
 			}
-		</script>
+		</script> -->
 
 	</head>
 
@@ -154,7 +154,8 @@
 						(작동 시간 : <span id="countdown"></span>)
 						<br><br>
 						</div>
-						<button class="introclose" style="background:#c0bfbf;border:1px solid black;width:120px;text-align:Center;font-family: 'DungGeunMo';height:28px;font-size:24px;" onclick="openFullscreen();">Enter</button>
+						<!-- <button class="introclose" style="background:#c0bfbf;border:1px solid black;width:120px;text-align:Center;font-family: 'DungGeunMo';height:28px;font-size:24px;" onclick="openFullscreen();">Enter</button> -->
+						<button class="introclose" style="background:#c0bfbf;border:1px solid black;width:120px;text-align:Center;font-family: 'DungGeunMo';height:28px;font-size:24px;">Enter</button>
 						<br><br>
 					</div>
 				</div>
@@ -189,14 +190,16 @@
 							</li>
 							<li><a href="#">App Dev</a>
 								<ul class="main3">
-									<li><a href="javascript:newWindow('#win_Tgroups');">Mourning Diary</a></li>
-									<li><a href="javascript:newWindow('#win_Poetry');">App Poetry</a></li>
+									<li><a href="javascript:newWindow('#win_Diary1');">Word Diary</a></li>
+									<li><a href="javascript:newWindow('#win_Diary2');">Thought Diary</a></li>
+									<li><a href="javascript:newWindow('#win_Diary3');">Mourning Diary</a></li>
 								</ul>
 							</li>
 							<li><a href="#">3D Graphics for Web</a>
 								<ul class="main3">
 									<li><a href="javascript:newWindow('#win_Ocean');">Ocean Panorama</a></li>
 									<li><a href="javascript:newWindow('#win_MTV');">Watch TV Shows</a></li>
+									<li><a href="javascript:newWindow('#win_BizCard');">3D Biz Card</a></li>
 								</ul>
 							</li>
 							<li><a href="#">Works</a>
@@ -283,7 +286,7 @@
 					</div>
 
 					<div class="icon" ondblclick="newWindow('#win_Freepoli')">
-						<img src="./hard01/freepoli_web/icon_freepoli.png" class="iconImg">
+						<img src="./hard01/freepoli_web/freepoli_web_logo_2_pixel.png" class="iconImg">
 						<p>Web Freepoli</p>
 					</div>
 
@@ -299,14 +302,26 @@
 						<p>Watch TV Shows</p>
 					</div>
 
-					<div class="icon" ondblclick="newWindow('#win_Tgroups')">
-						<img src="./hard01/t-goups_app/dove_flying_logo.png" class="iconImg">
-						<p>Mourning Diary</p>
+					<div class="icon" ondblclick="newWindow('#win_BizCard')">
+						<img src="./hard01/3d_biz_card/3dbizcard_qr_code_removed.png" class="iconImg">
+						<p>3D Biz Card</p>
 					</div>
 
-					<div class="icon" ondblclick="newWindow('#win_Poetry')">
-						<img src="./hard01/poetry_app/logo_app_poetry.png" class="iconImg">
-						<p>App Poetry</p>
+					<div class="icon" ondblclick="newWindow('#win_Diary1')">
+						<img src="./hard01/diary_001/word_diary_logo_pixel.png" class="iconImg">
+						<p>Word Diary</p>
+					</div>
+
+					<div class="icon" ondblclick="newWindow('#win_Diary2')">
+						<img src="./hard01/diary_002/thought_diary_logo_2_pixel.png" class="iconImg">
+						<p>Thought Diary</p>
+					</div>
+
+					<br>
+
+					<div class="icon" ondblclick="newWindow('#win_Diary3')">
+						<img src="./hard01/diary_003/AEDO_logo_pixel.png" class="iconImg">
+						<p>Mourning Diary</p>
 					</div>
 
 
@@ -326,7 +341,7 @@
 		<!-- 개별 창 -->
 
 		
-		<div id="win_Me" class="window" style="position: absolute; top: 52px; right: 2px; width: 900px; height: 390px; z-index: 3;">
+		<div id="win_Me" class="window" style="position: absolute; top: 52px; right: 2px; width: 900px; height: 390px; z-index: 3; display:none;">
 			<div class="windowheader">
 				<div class="windowclose"></div>
 				<div class="windowtitle">
@@ -459,7 +474,7 @@
 								<td class="tg-cly1">그린컴퓨터 아카데미 강남점 (2022.04 ~ 2022.06, 160H)</td>
 								<td class="tg-cly1">경리실무(전산세무1급) 세무회계 자격증취득 및 더존(Smart A) 실무 과정 수료
 									<br>· 전표처리, 결산관리, 회계정보시스템 운용
-									<br>· 부가가치세 신고, 운천징수, 법인세 신고, 원가계산, 원가관리
+									<br>· 부가가치세 신고, 원천징수, 법인세 신고, 원가계산, 원가관리
 									<br>· 부가가치세법, 소득세법, 법인세법, 조세특례제한법
 								</td>
 							</tr>
@@ -580,7 +595,7 @@
 		</div>
 
 
-		<div id="win_Team" class="window" style="position: absolute; top: 449px; right: 2px; width: 900px; height: 310px; z-index: 3;">
+		<div id="win_Team" class="window" style="position: absolute; top: 449px; right: 2px; width: 900px; height: 310px; z-index: 3; display:none;">
 			<div class="windowheader">
 				<div class="windowclose"></div>
 				<div class="windowtitle">
@@ -766,7 +781,7 @@
 			<div class="windowinner" style="background-color: #f2f2f2;">
 				<div class="fullwindowhtml">
 					<div class="textWindow">
-						<img class="artistImg" src="./hard01/freepoli_web/freepoli_web.png" style="max-width: 800px; height: auto !important;">
+						<img class="artistImg" src="./hard01/freepoli_web/FreePoli_main.png" style="max-width: 800px; height: auto !important;">
 						<br>
 						<a href= "https://freepoli.com/" target="_blank"><img src="./img/homepage_icon.png" style="height: 22px; vertical-align:middle;"> (Homepage) 새 창에서 링크 열기</a>
 						<br>
@@ -874,7 +889,68 @@
 		</div>
 
 
-		<div id="win_Poetry" class="window" style="position: absolute; top: 80px; left: 550px; width: 711px; height: 700px; z-index: 10; display: none;">
+		<div id="win_BizCard" class="window" style="position: absolute; top: 80px; left: 550px; width: 711px; height: 700px; z-index: 10; display: none;">
+			<div class="windowheader">
+				<div class="windowclose"></div>
+				<div class="windowtitle">AR Biz Card
+					<div class="windowControl">
+						<div class="button max" >&#11109;</div>
+					</div>				
+				</div>
+			</div>
+			<div class="windowinner" style="background-color: #f2f2f2;">
+				<div class="fullwindowhtml">
+					<div class="textWindow">
+						<img class="artistImg" src="./hard01/3d_biz_card/AR_biz_card_001.png" style="max-width: 800px; height: auto !important;">
+						<br>
+						<img class="artistImg" src="./hard01/3d_biz_card/AR_biz_card_002.png" style="max-width: 800px; height: auto !important;">
+						<br>
+						<a href= "https://qoo900.com/ARbizcard.html" target="_blank"><img src="./img/new_window_logo.png" style="height: 22px; vertical-align:middle;"> (Web) 새 창에서 웹캠 열기</a>
+						<div class="height50"></div>
+						<span class="txtBold">&lt;AR 명함&gt;</span>
+						<br><br>
+						현대시를 3D 형태로 엮어낸 문학 큐레이션 어플이다. 시의 짧은 문장을 가상 공간에 모아 시공간을 벗어난 환상성을 구현한다. 이는 독자들에게 새로운 몰입 경험과 해방감을 제공할 것이다.
+						<div class="height50"></div>
+						Uses:
+						<br>
+						<a href="https://github.com/flutter/flutter" target="_blank">Flutter</a>, <a href="https://github.com/wasabia/three_dart" target="_blank">three_dart</a>, <a href="https://firebase.google.com/" target="_blank">Firebase</a>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+		<div id="win_Diary1" class="window" style="position: absolute; top: 80px; left: 550px; width: 711px; height: 700px; z-index: 10; display: none;">
+			<div class="windowheader">
+				<div class="windowclose"></div>
+				<div class="windowtitle">Word Diary App
+					<div class="windowControl">
+						<div class="button max" >&#11109;</div>
+					</div>				
+				</div>
+			</div>
+			<div class="windowinner" style="background-color: #f2f2f2;">
+				<div class="fullwindowhtml">
+					<div class="textWindow">
+						<img class="artistImg" src="./hard01/diary_002/flower_typing.jpg" style="max-width: 800px; height: auto !important;">
+						<br>
+						<a href= "#">오픈 준비 중입니다. (2022년 12월 중)</a>
+						<div id="Dday02" class="height50"></div>
+						<div class="height50"></div>
+						<span class="txtBold">&lt;단어 일기 Cross Platform Application - Coming Soon&gt;</span>
+						<br><br>
+						현대시를 3D 형태로 엮어낸 문학 큐레이션 어플이다. 시의 짧은 문장을 가상 공간에 모아 시공간을 벗어난 환상성을 구현한다. 이는 독자들에게 새로운 몰입 경험과 해방감을 제공할 것이다.
+						<div class="height50"></div>
+						Uses:
+						<br>
+						<a href="https://github.com/flutter/flutter" target="_blank">Flutter</a>, <a href="https://github.com/wasabia/three_dart" target="_blank">three_dart</a>, <a href="https://firebase.google.com/" target="_blank">Firebase</a>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+		<div id="win_Diary2" class="window" style="position: absolute; top: 80px; left: 550px; width: 711px; height: 700px; z-index: 10; display: none;">
 			<div class="windowheader">
 				<div class="windowclose"></div>
 				<div class="windowtitle">App Poetry
@@ -886,7 +962,7 @@
 			<div class="windowinner" style="background-color: #f2f2f2;">
 				<div class="fullwindowhtml">
 					<div class="textWindow">
-						<img class="artistImg" src="./hard01/poetry_app/flower_typing.jpg" style="max-width: 800px; height: auto !important;">
+						<img class="artistImg" src="./hard01/diary_002/flower_typing.jpg" style="max-width: 800px; height: auto !important;">
 						<br>
 						<a href= "#">오픈 준비 중입니다. (2022년 12월 중)</a>
 						<div id="Dday02" class="height50"></div>
@@ -904,7 +980,7 @@
 		</div>
 
 
-		<div id="win_Tgroups" class="window" style="position: absolute; top: 52px; left: 500px; width: 711px; height: 700px; z-index: 10; display: none;">
+		<div id="win_Diary3" class="window" style="position: absolute; top: 52px; left: 500px; width: 711px; height: 700px; z-index: 10; display: none;">
 			<div class="windowheader">
 				<div class="windowclose"></div>
 				<div class="windowtitle">App Mourning Diary
@@ -916,14 +992,19 @@
 			<div class="windowinner" style="background-color: #f2f2f2;">
 				<div class="fullwindowhtml">
 					<div class="textWindow">
-						<video id="vid" autoplay="autoplay" loop="loop" muted="muted" playsinline style="width: 100%; max-width: 800px; display: block;">
+						<img class="artistImg" src="./hard01/diary_003/AEDO_App_Logo.png" style="max-width: 800px; height: auto !important;">
+
+						<!-- <video id="vid" autoplay="autoplay" loop="loop" muted="muted" playsinline style="width: 100%; max-width: 800px; display: block;">
 							<source src="./hard01/t-goups_app/sky-white-dove-flying.mp4" type="video/mp4">
-						</video>
+						</video> -->
+						
 						<br>
-						<a href= "#">오픈 준비 중입니다. (2022년 12월 중)</a>
-						<div id="Dday01" class="height50"></div>
+						<a href= "#">기획 단계입니다. (미정)</a>
+						
+						<!-- <div id="Dday01" class="height50"></div> -->
+						
 						<div class="height50"></div>
-						<span class="txtBold">&lt;애도 일기 Cross Platform Application - Coming Soon&gt;</span>
+						<span class="txtBold">&lt;애도 일기 Cross Platform Application&gt;</span>
 						<br><br>
 						2022년을 지나오며 우리는 많은 일을 겪어왔다. 코로나부터 시작해서 전쟁, 태풍, 대형 참사에 이르기까지. 하지만 공동체 사회가 무너지고, 개인주의와 피상적인 관계가 보편적인 흐름이 된 가운데, 비대면과 디지털화가 가속되면서 애도와 슬픔은 오롯이 개인의 영역으로 남아버렸다.
 						<br>
@@ -933,7 +1014,7 @@
 						<div class="height50"></div>
 						Uses:
 						<br>
-						<a href="https://github.com/flutter/flutter" target="_blank">Flutter</a>, <a href="https://github.com/wasabia/three_dart" target="_blank">three_dart</a>, <a href="https://firebase.google.com/" target="_blank">Firebase</a>
+						<a href="https://github.com/flutter/flutter" target="_blank">React Native</a>, <a href="https://github.com/pmndrs/react-three-fiber" target="_blank">React Three Fiber</a>, <a href="https://firebase.google.com/" target="_blank">Firebase</a>
 					</div>
 				</div>
 			</div>
