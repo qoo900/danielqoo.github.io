@@ -236,8 +236,8 @@ function DdayCountdown() {
 	dateObj.setDate(dateObj.getDate() + 1);
 
 	//countDownTimer('Dday01', dateObj); // 내일까지
-	countDownTimer('Dday01', '12/31/2022 23:59'); // 2022년 11월 30일까지, 시간을 표시하려면 01:00 AM과 같은 형식을 사용한다. 
-	countDownTimer('Dday02', '12/31/2022 23:59'); // 2022년 12월 31일까지, 시간을 표시하려면 01:00 AM과 같은 형식을 사용한다.
+	countDownTimer('Dday01', '01/31/2023 23:59'); // 2022년 11월 30일까지, 시간을 표시하려면 01:00 AM과 같은 형식을 사용한다. 
+	countDownTimer('Dday02', '02/28/2023 23:59'); // 2023년 01월 31일까지, 시간을 표시하려면 01:00 AM과 같은 형식을 사용한다.
 	//countDownTimer('Dday03', '04/01/2024'); // 2024년 4월 1일까지
 	//countDownTimer('Dday04', '04/01/2019'); // 2024년 4월 1일까지
 }
