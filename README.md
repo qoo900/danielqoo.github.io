@@ -1,2 +1,2 @@
 # danielqoo.github.io
-publish_only
+test_only
