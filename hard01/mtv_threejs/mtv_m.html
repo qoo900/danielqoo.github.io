@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang='ko'>
+
+<head>
+	<title>Watch TV Shows</title>
+	<meta charset='utf-8'>
+	<style>
+
+		/* Fonts */
+		@font-face {
+			font-family: 'DungGeunMo';
+			src: url('../../fonts/DungGeunMo.woff') format('woff');
+			font-weight: normal;
+			font-style: normal;
+			font-display: block;
+		}
+
+		/* @media( orientation: portrait ){
+			html {
+			transform: rotate(-90deg);
+			transform-origin: top left;
+			position: absolute;
+			top: 100%;
+			left: 0%;
+			width: 100vh;
+			height: 100vw;
+			}
+		} */
+
+		body {
+			margin: 0;
+			background-color: #bfbfbf;
+			overflow-x:hidden;
+			overflow-y:hidden;
+		}
+
+		#mtvInfo001 {
+			color: #fff;
+			position: absolute;
+			top: 15.2em;
+			padding: 5px 20px;
+			font-family: 'DungGeunMo', sans-serif;
+			font-weight: 100;
+			font-size: 40px;
+			background-color: #000;
+			z-index: 3;
+		}
+
+		#mtvInfo002 {
+			color: #fff;
+			position: absolute;
+			top: 19.1em;
+			padding: 5px 20px;
+			font-family: 'DungGeunMo', sans-serif;
+			font-weight: 100;
+			font-size: 40px;
+			background-color: #bfbfbf;
+			z-index: 3;
+		}
+
+		#mtvScript001 {
+			color: #fff;
+			position: absolute;
+			top: 2px;
+			padding: 5px 20px;
+			font-family: 'DungGeunMo', sans-serif;
+			font-weight: 100;
+			font-size: 40px;
+			background-color: #000;
+			z-index: 3;
+		}
+
+		#mtvScript002 {
+			color: #bfbfbf;
+			position: absolute;
+			top: 17.2em;
+			padding: 5px 20px;
+			font-family: 'DungGeunMo', sans-serif;
+			font-weight: 100;
+			font-size: 40px;
+			background-color: #bfbfbf;
+			z-index: 3;
+		}
+
+		#container {
+			height: 60em;
+        	width: 60em;
+			background-image: url("../../img/vintage_tv_remove.png");
+			background-size: contain;
+			background-repeat: no-repeat;
+			background-position: initial;
+			z-index: 2;
+			position: absolute;
+			pointer-events: none;
+		}
+
+		#mtvshow {
+			position: relative;
+			top: 45px;
+			left: 5px;
+			z-index: 1;
+		}
+
+		#gui {
+			position: absolute;
+			top: 0.1em;
+			left: 45em;
+			z-index: 3;
+		}
+
+	</style>
+
+	<link rel="preload" href="../../fonts/DungGeunMo.woff" as="font" type="font/woff" crossorigin/>
+
+	<!--favicon-->
+	<link rel="apple-touch-icon" sizes="57x57" href="./favicon/apple-icon-57x57.png">
+	<link rel="apple-touch-icon" sizes="60x60" href="./favicon/apple-icon-60x60.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="./favicon/apple-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="76x76" href="./favicon/apple-icon-76x76.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="./favicon/apple-icon-114x114.png">
+	<link rel="apple-touch-icon" sizes="120x120" href="./favicon/apple-icon-120x120.png">
+	<link rel="apple-touch-icon" sizes="144x144" href="./favicon/apple-icon-144x144.png">
+	<link rel="apple-touch-icon" sizes="152x152" href="./favicon/apple-icon-152x152.png">
+	<link rel="apple-touch-icon" sizes="180x180" href="./favicon/apple-icon-180x180.png">
+	<link rel="icon" type="image/png" sizes="192x192"  href="./favicon/android-icon-192x192.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="./favicon/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="96x96" href="./favicon/favicon-96x96.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="./favicon/favicon-16x16.png">
+	<link rel="manifest" href="./favicon/manifest.json">
+	<meta name="msapplication-TileColor" content="#ffffff">
+	<meta name="msapplication-TileImage" content="./favicon/ms-icon-144x144.png">
+	<meta name="theme-color" content="#ffffff">
+
+	<script src='../../lib/three.min.js'></script>
+	<script src='../../lib/dat.gui.min.js'></script>
+	<script src='../../lib/stats.min.js'></script>
+	<script src='../../lib/postprocessing/EffectComposer.js'></script>
+	<script src='../../lib/postprocessing/RenderPass.js'></script>
+	<script src='../../lib/postprocessing/ShaderPass.js'></script>
+	<script src='../../lib/postprocessing/MaskPass.js'></script>
+	<script src='../../lib/shaders/CopyShader.js'></script>
+	<script src='../../lib/shaders/FilmShader.js'></script>
+	<script src='../../lib/shaders/RGBShiftShader.js'></script>
+	<script src='../../lib/BadTVShader.js'></script>
+	<script src='../../lib/StaticShader.js'></script>
+
+	<script type="module">
+		import mtvshow from '../../js/mtvshow_m.js';
+		mtvshow();
+	</script>
+
+</head>
+
+<body>
+
+	<script type="text/javascript">
+
+	</script>
+
+	<div id="container">
+
+		<div id='mtvInfo001'>Click Screen to randomize</div>
+		<div id='mtvScript001'>Ashima WebGL Noise, three.js</div>
+		<div id='mtvScript002'><img src="../../img/header_text.png" style="width:23em;"></div>
+		<div id='mtvInfo002'>특정 버전 iOS 및 Safari에서는 Video가 실행되지 않습니다</div>
+
+	</div>
+	
+	<canvas id="mtvshow"></canvas>
+
+	<div id="gui"></div>
+
+</body>
+
+
+</html>

@@ -471,3 +471,114 @@ ul{
 .txtNoUnder{
 	text-decoration:none;
 }
+
+
+
+/* 추가 */
+.upperIcon{
+	display:block;
+	margin:0 auto;
+}
+
+.tg-icon{
+	padding-left:10px;
+	padding-right:10px;
+}
+
+.tg-icon img{
+	height:100%;
+}
+
+.tg-cly1{
+	vertical-align:middle;
+	padding-top:5px;
+	padding-bottom:5px;
+	height:50px;
+}
+
+.tg-cly1-title{
+	padding-top:10px;
+	padding-bottom:10px;
+}
+
+
+
+
+
+/* tetris */
+.grid {
+display: grid;
+grid-template-columns: repeat(2, minmax(360px, 1fr));
+grid-template-rows: repeat(1, 900px);
+margin-block-start: 0.1em;
+margin-block-end: 0.1em;
+gap: 8px;
+}
+
+@media (max-width: 600px){
+	.grid {
+		display: grid;
+		width: 100%;
+		grid-template-columns: repeat(2, minmax(180px, 1fr));
+		grid-template-rows: repeat(1, 550px);
+		/* grid-auto-columns: 600px; */
+		gap: 8px;
+	}
+}
+
+@media (max-width: 450px){
+	.grid {
+		display: grid;
+		width: 100%;
+		grid-template-columns: repeat(2, minmax(180px, 1fr));
+		grid-template-rows: repeat(1, 450px);
+		/* grid-auto-columns: 600px; */
+		gap: 8px;
+	}
+}
+
+@media (max-width: 300px){
+	.grid {
+		display: grid;
+		width: 100%;
+		grid-template-columns: repeat(2, minmax(140px, 1fr));
+		grid-template-rows: repeat(1, 450px);
+		/* grid-auto-columns: 600px; */
+		gap: 8px;
+	}
+}
+
+.left-column {
+display: flex;
+flex-direction: column;
+justify-content: space-between;
+}
+
+.right-column {
+display: flex;
+flex-direction: column;
+justify-content: space-between;
+}
+
+.game-board {
+border: solid 2px;
+}
+
+.play-button {
+background-color: #4caf50;
+font-size: 16px;
+padding: 15px 30px;
+cursor: pointer;
+}
+
+#pause-btn {
+display: none;
+}
+	
+	#sound-speaker{
+	font-size:30px;
+	}
+	
+	.sound-item{
+	cursor:pointer;
+	}

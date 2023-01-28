@@ -15,22 +15,24 @@ export default function threeDface() {
     function init() {
 	
         camera = new THREE.PerspectiveCamera( 27, window.innerWidth / window.innerHeight, 0.1, 100 );
-        camera.position.z = 20;
+        camera.position.x = 0;
+        camera.position.y = 1;
+        camera.position.z = 10;
     
         scene = new THREE.Scene();
     
         const loader = new GLTFLoader();
-        loader.load( './img/LeePerrySmith.glb', function ( gltf ) {
-    
+        loader.load( './img/myface.gltf', function ( gltf ) {
+            
             const geometry = gltf.scene.children[ 0 ].geometry;
     
-            let mesh = new THREE.Mesh( geometry, buildTwistMaterial( 2.0 ) );
-            mesh.position.x = - 3.5;
+            let mesh = new THREE.Mesh( geometry, buildTwistMaterial( -4.0 ) );
+            mesh.position.x = - 1.5;
             mesh.position.y = - 0.5;
             scene.add( mesh );
     
-            mesh = new THREE.Mesh( geometry, buildTwistMaterial( - 2.0 ) );
-            mesh.position.x = 3.5;
+            mesh = new THREE.Mesh( geometry, buildOriginMaterial( 4.0 ) );
+            mesh.position.x = 1.5;
             mesh.position.y = - 0.5;
             scene.add( mesh );
     
@@ -41,7 +43,9 @@ export default function threeDface() {
             antialias : true
         } );
         renderer.setPixelRatio( window.devicePixelRatio );
-    
+
+
+
         const controls = new OrbitControls( camera, renderer.domElement );
         controls.minDistance = 10;
         controls.maxDistance = 50;
@@ -92,6 +96,48 @@ export default function threeDface() {
         return material;
     
     }
+
+
+    function buildOriginMaterial( amount ) {
+    
+        const texture = new THREE.TextureLoader().load('./img/myface_tex.png');
+
+        const material = new THREE.MeshBasicMaterial({
+            map : texture
+        });
+        material.onBeforeCompile = function ( shader ) {
+    
+            shader.uniforms.time = { value: 0 };
+    
+            shader.vertexShader = 'uniform float time;\n' + shader.vertexShader;
+            shader.vertexShader = shader.vertexShader.replace(
+                '#include <begin_vertex>',
+                [
+                    `float theta = sin( time + position.y ) / ${ amount.toFixed( 1 ) };`,
+                    'float c = cos( theta );',
+                    'float s = sin( theta );',
+                    'mat3 m = mat3( c, 0, s, 0, 1, 0, -s, 0, c );',
+                    'vec3 transformed = vec3( position ) * m;',
+                    // 'vNormal = vNormal * m;'
+                ].join( '\n' )
+            );
+    
+            material.userData.shader = shader;
+    
+        };
+    
+        // Make sure WebGLRenderer doesnt reuse a single program
+    
+        material.customProgramCacheKey = function () {
+    
+            return amount;
+    
+        };
+    
+        return material;
+    
+    }
+
     
     //
     

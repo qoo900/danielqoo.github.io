@@ -1,2 +1,2 @@
-# danielqoo.github.io
-publish_only
+# qoo900.com
+my_portfolio

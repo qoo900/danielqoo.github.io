@@ -417,15 +417,13 @@ ul{
 /* tetris */
 .grid {
 display: grid;
-grid-template-columns: 320px 200px;
-position: absolute;
-right: 5%;
-z-index: 1;
+grid-template-columns: 360px 220px;
 }
 
 .left-column {
 display: flex;
 flex-direction: column;
+justify-content: space-between;
 }
 
 .right-column {
@@ -455,4 +453,16 @@ font-size:30px;
 
 .sound-item{
 cursor:pointer;
+}
+
+
+
+
+/* Beat Maker */
+
+
+.beatmaker{
+	display:block;
+	width:100%;
+	height:auto;
 }

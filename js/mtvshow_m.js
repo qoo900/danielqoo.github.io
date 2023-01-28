@@ -1,7 +1,4 @@
 export default function mtvshow() {
-    //Bad TV Shader Demo
-    //Using Three.js r.75
-    //by Felix Turner / www.airtight.cc / @felixturner
 
     var camera, scene, renderer;
     var video, videoTexture, videoMaterial;
