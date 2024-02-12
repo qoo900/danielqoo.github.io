@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkfreepoli_web=self.webpackChunkfreepoli_web||[]).push([[308],{7308:(e,s,p)=>{e.exports=p.p+"static/media/we_need_a_designer.8788fd4fde79c14967b0.md"}}]);
